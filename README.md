@@ -6,12 +6,12 @@ InPath looks to form partnerships in the justice system that would allow us to h
 # Frequently Asked Questions
 ### Who is this app for?
 
-Any individual in one of the groups described above or in any under served community that wants to learn the skills necessary for a technology career. It will also serve partner organizations and corporations interested in providing internships, mentorships, and employment opportunities.
+Any individual (ages 18+) in one of the groups described above or in any under served community that wants to learn the skills necessary for a technology career. It will also serve partner organizations and corporations interested in providing internships, mentorships, and employment opportunities. (**IPD works with mentored programs ages 14-18 on our main site via our affiliate partners**).
 
 The target population of the application includes:
 
-1.  Disconnected Youth/Opportunity Youth are teenagers and young adults between the ages of 16 and 24 who are neither working nor in school.
-2.  Youth in Transition (YIT) Ages 16-24 that are in transitioning from foster care or state custody.
+1.  Disconnected Youth/Opportunity Youth are young adults who are neither working nor in school.
+2.  Youth in Transition (YIT) youth that are in transitioning from foster care or state custody.
 3. Justice Involved are Individuals who have interactions with the criminal justice system as a defendant
 
 ### What is the benefit this app is providing?
