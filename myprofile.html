@@ -1,0 +1,908 @@
+
+ 
+
+<!DOCTYPE html>
+<html lang="en-US" data-lang="en-US" crm-lang="en-US" crm-lcid="1033">
+	<head>
+			<meta charset="utf-8" /><meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<script type="text/javascript">
+				
+			</script>
+		<title>
+	MyProfile&nbsp;· Starter Portal
+</title>
+			
+			<script src="/_resources/getresourcemanager?lang=en-US"></script>
+		
+		<script type="text/javascript">
+			// Refresh all powerBI Iframes on Login in one Iframe
+			window.addEventListener('message', function (event) {
+				if (event && event.data && event.data == 'refreshPowerBI') {
+					$("iframe.powerbi").each(function () {
+						this.src = this.src;
+					});
+				}
+			});
+
+			// Fix for incorrect viewport width setting in IE 10 on Windows Phone 8.
+			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+				var msViewportStyle = document.createElement("style");
+				msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+			}
+		</script>
+		
+			
+			<link href="/bootstrap.min.css" rel="stylesheet" />
+
+			<link href="/css/glyphicons-font-awesome-migrate.min.css" rel="stylesheet"/>
+
+			<link href="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-637cc9dada.css" rel="stylesheet" />
+
+
+			
+			<!--[if lt IE 9]>
+				<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+			
+			<!--[if lt IE 10]>
+				<script src="~/js/formdata.js"></script>
+			<![endif]-->
+			
+				
+			
+	
+	
+		<meta name="referrer" content="no-referrer"/>
+	
+
+
+			<link href="/theme.css" rel="stylesheet" />
+<link href="/portalbasictheme.css" rel="stylesheet" />
+
+			
+			
+			
+			
+		
+			</head>
+	<body data-sitemap-state="/my-page-profile/:/"
+		data-dateformat="M/d/yyyy"
+		data-timeformat="h:mm tt"
+		data-datetimeformat="M/d/yyyy h:mm tt"
+		data-app-path="/"
+		data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
+		data-case-deflection-url="/_services/search/f46b70cc-580b-4f1a-87c3-41deb48eb90d">
+	
+		
+			<script type="text/javascript">
+				window["Microsoft"] = window["Microsoft"] || {};
+				window["Microsoft"].Dynamic365 = {
+					Portal: {
+						User: {
+							contactId: '574108c9-a326-eb11-a813-000d3a9a025a',
+							userName: 'jemAzure'
+						},
+						version : '9.2.6.67',
+						type: 'CDSStarterPortal',
+						id: 'c9a5783e-8dfb-4d81-a171-1a4b94ae0d83'
+					}
+				}
+			</script>
+
+		
+			
+
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+
+            <!--div class="visible-xs-block">
+              <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><a href="~/"><img src="/Logo.png" alt="Contoso Limited" style="width: 32px; height: 32px;"><span style="position: relative; top: 2px; margin-left: 9px;">InPath Hackathon</span></a></div></div>
+            </div-->
+            <div class="visible-sm-block visible-md-block visible-lg-block visible-xs-block navbar-brand">
+                <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><a href="~/"><img src="/Logo.png" alt="Contoso Limited" style="width: 32px; height: 32px;"><span style="position: relative; top: 2px; margin-left: 9px;">InPath Hackathon</span></a></div></div>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" title="Toggle navigation" data-toggle="collapse" data-target="#navbar" aria-expanded="false" onclick="setHeight();">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            
+            
+            <div class="navbar-right menu-bar " data-weblinks-maxdepth="2">
+                <ul class="nav navbar-nav weblinks" role="menubar">
+                    
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="Home" href="/" title="Home" >
+                            Home
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="About us" href="/about-us/" title="About us" >
+                            About us
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="Available Courses" href="/AvailableCourse/" title="Available Courses" >
+                            Available Courses
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink  dropdown">
+                        <a role="menuitem" aria-label="MyProfile" href="#" class="dropdown-toggle" data-toggle="dropdown" title="MyProfile" >
+                            MyProfile
+                            <span class="caret"></span>
+                        </a>
+                        
+                        <ul class="dropdown-menu" role="menu">
+                            
+                            <li role="none">
+                                <a role="menuitem" aria-label="MyProfile" href="/my-page-profile/"   title="MyProfile" >MyProfile</a>
+                            </li>
+                            <div class="divider"></div>
+                            
+                            
+                            <li role="none">
+                                <a role="menuitem" aria-label="History" href="/my-page-profile/history/"   title="History" >
+                                    History
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="Students" href="/Students/" title="Students" >
+                            Students
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    <li role="none" class="dropdown">
+                        <a id="search" class="navbar-icon" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Search">
+                            <span class="glyphicon glyphicon-search"></a>
+                        </a>
+                        <div class="dropdown-menu dropdown-search">
+                            
+
+
+
+
+
+<form method="GET" action="/search/" role="search" class="form-search">
+    <div class="input-group">
+
+        
+
+        <label for="q" class="sr-only">
+            Search
+        </label>
+        <input type="text" class="form-control" id="q" name="q"
+               placeholder="Search"
+               value=""
+               title="Search">
+        <div class="input-group-btn">
+            <button type="submit" class="btn btn-primary"
+                    title="Search"
+                    aria-label="Search">
+                <span class="fa fa-search" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+                        </div>
+                    </li>
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    <li class="dropdown" role="none">
+                        <a href="#" class="dropdown-toggle" title="John Murphy" data-toggle="dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                            <span class="username">John Murphy</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            
+                            
+                            
+                            
+                            
+                            <li role="none">
+                                <a role="menuitem" aria-label="Profile" href="/profile/" title="Profile">Profile</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="divider" role="separator" aria-hidden="true"></li>
+                            <li role="none">
+                                <a role="menuitem" aria-label="Sign out" href="/Account/Login/LogOff?returnUrl=%2Fmy-page-profile%2F" title="Sign out">
+                                    Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    if (window.navigator.appName == "Microsoft Internet Explorer" || window.navigator.userAgent.indexOf("Trident") > 0) {
+      var searchElement = document.getElementById("search");
+      if (searchElement != null) searchElement.setAttribute("href", "");
+    }
+  };
+  function setHeight() {
+    var windowHeight = window.innerHeight - 140;
+    var navbar = document.getElementById("navbar");
+    if (navbar) {
+      navbar.style.maxHeight = windowHeight + "px";
+    }
+  }
+  window.addEventListener('resize', function(event) {
+    setHeight();
+  });
+</script>
+
+		<!-- add anti-forgery token-->
+		<div id="antiforgerytoken" data-url="/_layout/tokenhtml"></div>
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-64fa3497fa.js"></script>
+
+		
+		
+	<form method="post" action="/my-page-profile/" onsubmit="javascript:return WebForm_OnSubmit();" id="content_form">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['content_form'];
+if (!theForm) {
+    theForm = document.content_form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZM4Ly5aqZrdki9aUUv-BT6g-AqshRu-CNJdanfAEgwedy3eNnaEZL-kN_kBWVnlKUg2&amp;t=637327039249080682" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=nv7asgRUU0tRmHNR2D6t1DGyol6E6Gj_cr5NuO1MZq1ibWzQuryibVPJ6TbQKJCwHaDVpRuGIv5sY3ICBIcMnv6PPi8c-bU9hxGtQWKOWo5Bdp7gtnrsJaBemtz7iULrHqsbsfOfpu9ryR3pt5_UCQ2&amp;t=5334fc78" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhviYY3pPPwFgPk_CKDbTlPS5cz90bTxgPE1QU9FXLQVYeRDRHU1G50RgnNWTetwuSfaJV624mV7vlgCBPY8r1gbba002EXO_VuN6D6xNy3LepNHsUHVe_ClnHEUtJxFL5MiBynFmvzIaJCevAm4zS3R01&amp;t=2a797f5c" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OOAq8mQbhs3n0_fb9V5bxu6BG392mNvJfP33sdcOMeF0nWOAOezJUXvf5-tuX6n5sNIUTfl_ylAU0F9H9b3NaU3rfAS0cSaQaC-3v2Sl0kIIeZ0x3JKzJEZThZigPiL8pKjp7kmR4dePBAuy2CoVmgo1&amp;t=2a797f5c" type="text/javascript"></script>
+<script src="../js/jquery.blockUI.js" type="text/javascript"></script>
+<script src="/xrm-adx/js/webform.js" type="text/javascript"></script>
+<script src="/xrm-adx/js/radcaptcha.js" type="text/javascript"></script>
+<script src="/xrm-adx/js/crmentityformview.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1003FE81" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="pM4m2jxfPBxNs+8OW+U4DOZGg85Pb1/XWRMFAAnXrL99RR9tkOwq/+MikfRtv47b6r6irRflureCA8PM94fyKYaRk+jubd7U2eFDjuGh1JRI+nhUlpXb/VjUBGuDOUNlkmH84m4mt9YqToF+0WP84iKEDZHF4Zn26brMxWBobSwhZV8TQNJgirn4ZNY069WCQA+J251ZihWodb1WFPFNfF0kImIv6z4piN2KjhS6v2LYR+gcAAwvjp+W9ctGqExsdEteOa/L6352CRTicKbzAraoGp5+4aV4G7CrQL8u3rbqtKbLmenhl+8BDjjE4jtq0/C8UVi1KVc+r4CLMjUF5btwNPScSZWkznt5ycYrfv0oLNehH7baecf+UzR4HLsKeBhZp7SGUx47LoHw4c23OWxpO7VXbLRfHibY1XEXc5Bf2q9YABupPoFiCl5UEzOl9Fk0eKiiyHqz10z+Sr8Wvzn6HX6hmOSus+UZR5c9UlXVxcAFTl8hrV+fnYa+AYQ/ILcnEN1JDnHDcuqNFgAQYcnXKu2UuxXx5Y8dXHhX6A8=" />
+</div>
+		<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ctl00$ContentContainer$ctl00', 'content_form', [], [], [], 90, 'ctl00$ctl00$ctl00');
+//]]>
+</script>
+
+		
+		
+			<div class="page-heading">
+				<div class="container">
+					
+	
+		<ul class="breadcrumb"><li><a href="/">Home</a></li>
+<li class="active">MyProfile</li>
+</ul>
+
+					
+					
+	
+		
+		<div class="page-header">
+			<h1>
+				<span class="xrm-attribute&#32;xrm-editable-text"><span class="xrm-attribute-value">MyProfile</span></span>
+			</h1>
+		</div>
+		<div class="notifications"></div>
+	
+
+				</div>
+			</div>
+		
+		
+		<div class="container">
+			
+	<div class="row">
+		<div class="col-md-4">
+			<div class="well">
+					<a title="John Murphy" aria-label="John Murphy graphic/image" href="#"><img src="/xrm-adx/images/contact_photo.png" alt="John Murphy"/></a>
+				&nbsp;
+				John Murphy
+			</div>
+			<div><div class="weblinks-depth-1&#32;weblinks&#32;list-group" data-weblinks-depth="1"><a class="weblink&#32;list-group-item" href="/profile/" title="Profile"><span class="weblink-name">Profile</span></a></div></div>
+            
+	<div class="panel panel-default nav-profile">
+		<div class="panel-heading">
+			<div class="panel-title"><span class="fa fa-lock" aria-hidden="true"></span> <span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Security</span></span></div>
+		</div>
+		<div class="list-group nav-profile">
+			
+					<a class="list-group-item " href="/en-US/Account/Manage/ChangePassword" title='Change Password'>
+						<span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Change Password</span></span>
+					</a>
+				
+				<a class="list-group-item " href="/en-US/Account/Manage/ChangeEmail" title="Change Email">
+					
+						<span class="fa fa-exclamation-circle pull-right profile-alert" title="Unconfirmed"></span>
+					<span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Change Email</span></span>
+				</a>
+			
+				<a class="list-group-item " href="/en-US/Account/Manage/ChangeLogin" title="Manage External Authentication">
+					<span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Manage External Authentication</span></span>
+				</a> 
+			
+		</div>
+	</div>
+
+		</div>
+		<div class="col-md-8">
+			
+				<div class="xrm-editable-html&#32;xrm-attribute&#32;page-copy"><div class="xrm-attribute-value"><p>This website uses sample data for illustration purposes. You can build pages using multiple templates available.</p></div></div>
+				
+<script type="text/javascript">
+		$(document).ready(function () {
+			if ($('.alert.alert-success.profileMessages')) {
+				var successAlertDiv = $('.alert.alert-success.profileMessages');
+				if (successAlertDiv.find('span.xrm-attribute-value')) {
+					var alertAriaLabel = successAlertDiv.find('span.xrm-attribute-value').text();
+					successAlertDiv.attr("aria-label", alertAriaLabel);
+					successAlertDiv.attr("tabindex", "0");
+					window.setTimeout(function () {
+						$('.alert.alert-success.profileMessages').focus();
+					}, 100);
+				}
+			}
+		});
+</script>
+					<div class="alert alert-info clearfix">
+						<span class="fa fa-exclamation-circle" aria-hidden="true"></span> <span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Your email requires confirmation</span></span>
+						<div class="pull-right">
+							<a onclick="return ConfirmEmail();" class="btn btn-info btn-xs" 
+							title="Confirm Email" href="javascript:void(0);">
+								<span class="fa fa-envelope-o" aria-hidden="true"></span> Confirm Email
+							</a>
+						</div>
+					</div>
+				<div id="ConfirmEmailLoader" class="view-loading message text-center" style="display: none;">
+					<span class="fa fa-spinner fa-spin" aria-hidden="true"></span>
+				</div>
+				
+					<script type="text/javascript">
+						function entityFormClientValidate() {
+							// Custom client side validation. Method is called by the submit button's onclick event.
+							// Must return true or false. Returning false will prevent the form from submitting.
+							return true;
+						}
+						
+						function webFormClientValidate() {
+							// Custom client side validation. Method is called by the next/submit button's onclick event.
+							// Must return true or false. Returning false will prevent the form from submitting.
+							return true;
+						}
+					</script>
+					<div id="WebFormControl">
+
+</div>
+					<div id="EntityFormControl">
+
+</div>
+					
+				
+				
+	
+		
+    
+
+	
+
+	
+
+	<fieldset>
+		<legend>
+			<span class="xrm-attribute&#32;xrm-editable-text"><span class="xrm-attribute-value">Your Information</span></span>
+		</legend>
+
+		
+		<div id="ProfileFormView" class="entity-form&#32;crmEntityFormView">
+	<input type="hidden" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$ProfileFormView_EntityName" id="ProfileFormView_EntityName" value="contact" /><input type="hidden" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$ProfileFormView_EntityID" id="ProfileFormView_EntityID" value="574108c9-a326-eb11-a813-000d3a9a025a" /><input type="hidden" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$ProfileFormView_EntityState" id="ProfileFormView_EntityState" value="0" /><input type="hidden" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$ProfileFormView_EntityStatus" id="ProfileFormView_EntityStatus" value="1" /><span id="ProfileFormView_EntityLayoutConfig"></span><div id="ValidationSummaryProfileFormView" class="alert&#32;alert-danger&#32;alert-block" role="alert" style="display:none;">
+
+	</div><div class="tab&#32;clearfix"><div class="tab-column" style="width:100%;"><div><fieldset aria-label="Name"><table role="presentation" class="section"><colgroup></colgroup><tr>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="firstname" id="firstname_label">First Name</label><div class="validators"><span id="RequiredFieldValidatorfirstname" style="display:none;">*</span><span id="MaximumLengthValidatorfirstname" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$firstname" type="text" value="John" maxlength="50" id="firstname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" aria-invalid="true" onfocus="validateRequiredField(this.id);" title="First&#32;Name&#32;is&#32;a&#32;required&#32;field." aria-label="First&#32;Name" /></div></td>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="lastname" id="lastname_label">Last Name</label><div class="validators"><span id="RequiredFieldValidatorlastname" style="display:none;">*</span><span id="MaximumLengthValidatorlastname" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$lastname" type="text" value="Murphy" maxlength="50" id="lastname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" aria-invalid="true" onfocus="validateRequiredField(this.id);" title="Last&#32;Name&#32;is&#32;a&#32;required&#32;field." aria-label="Last&#32;Name" /></div></td>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="emailaddress1" id="emailaddress1_label">E-mail</label><div class="validators"><span id="EmailFormatValidatoremailaddress1" style="visibility:hidden;">*</span><span id="MaximumLengthValidatoremailaddress1" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$emailaddress1" value="MURPHY_JOHNE@HOTMAIL.COM" maxlength="100" id="emailaddress1" class="text&#32;form-control&#32;" type="email" ondblclick="launchEmail(this.value);" onchange="setIsDirty(this.id);" style="text-decoration:underline;" /></div></td>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="telephone1" id="telephone1_label">Business Phone</label><div class="validators"><span id="MaximumLengthValidatortelephone1" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$telephone1" type="text" maxlength="50" id="telephone1" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="adx_organizationname" id="adx_organizationname_label">Organization Name</label><div class="validators"><span id="MaximumLengthValidatoradx_organizationname" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$adx_organizationname" type="text" maxlength="250" id="adx_organizationname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="jobtitle" id="jobtitle_label">Title</label><div class="validators"><span id="MaximumLengthValidatorjobtitle" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$jobtitle" type="text" maxlength="100" id="jobtitle" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="nickname" id="nickname_label">Nickname</label><div class="validators"><span id="MaximumLengthValidatornickname" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$nickname" type="text" maxlength="100" id="nickname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="websiteurl" id="websiteurl_label">Web Site</label><div class="validators"><span id="MaximumLengthValidatorwebsiteurl" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$websiteurl" maxlength="200" id="websiteurl" class="text&#32;form-control&#32;" type="url" ondblclick="launchUrl(this.value);" onchange="setIsDirty(this.id);validateUrlInput(this,200);" style="text-decoration:underline;" /></div></td>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="4" class="clearfix&#32;cell&#32;textarea&#32;form-control-cell"><div class="info"><label for="adx_publicprofilecopy" id="adx_publicprofilecopy_label">Public Profile Copy</label><div class="validators"><span id="MaximumLengthValidatoradx_publicprofilecopy" style="visibility:hidden;">*</span></div></div><div class="control"><textarea name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$adx_publicprofilecopy" rows="10" cols="20" maxlength="64000" id="adx_publicprofilecopy" class="textarea&#32;form-control&#32;" onchange="setIsDirty(this.id);" onkeydown="javascript:return&#32;LimitInput(this,&#32;event);" oninput="javascript:return&#32;LimitInput(this,&#32;event);" onpaste="javascript:return&#32;LimitPaste(this,&#32;event);">
+</textarea></div></td>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+		<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="1" class="clearfix&#32;cell&#32;lookup&#32;form-control-cell"><div class="info"><label id="adx_preferredlanguageid_label">Preferred Language</label><div class="validators"></div></div><div class="control"><div class="input-group"><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$adx_preferredlanguageid_name" type="text" id="adx_preferredlanguageid_name" class="text&#32;form-control&#32;lookup&#32;form-control&#32;" readonly="" aria-readonly="true" aria-labelledby="adx_preferredlanguageid_label" aria-label="Preferred&#32;Language" /><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$adx_preferredlanguageid" type="hidden" id="adx_preferredlanguageid" /><input name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$ProfileFormView$adx_preferredlanguageid_entityname" type="hidden" id="adx_preferredlanguageid_entityname" /><div class="input-group-btn"><button type="button" class="btn&#32;btn-default&#32;clearlookupfield" title="Clear&#32;lookup&#32;field" aria-label="Clear&#32;lookup&#32;field"><span class='sr-only'>Clear lookup field</span><span class='fa fa-times' aria-hidden='true'></span></button><button type="button" class="btn&#32;btn-default&#32;launchentitylookup" title="Launch&#32;lookup&#32;modal" aria-label="Launch&#32;lookup&#32;modal"><span class='sr-only'>Launch lookup modal</span><span class='fa fa-search' aria-hidden='true'></span></button></div></div><div id="adx_preferredlanguageid_lookupmodal" class="lookup-modal"><div class="entity-lookup" data-languageCode="1033" data-lookup-datafieldname="adx_preferredlanguageid" data-lookup-reference_entityformid="" data-url="/_services/entity-lookup-grid-data.json/f46b70cc-580b-4f1a-87c3-41deb48eb90d"><section aria-hidden="true" aria-label="Lookup&#32;records" class="modal&#32;fade&#32;modal-lookup" data-backdrop="static" role="dialog" tabindex="-1"><div class="modal-lg&#32;modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-label="Close" class="form-close" data-dismiss="modal" tabindex="0" title="Close" type="button"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h1 class="modal-title" title="Lookup&#32;records">Lookup records</h1></div><div class="modal-body"><div aria-hidden="true" class="modal-error&#32;message"><div class="alert&#32;alert-block&#32;alert-danger"><p>We're sorry, an error has occurred.</p></div></div><div class="entity-grid" data-allow-filter-off="false" data-apply-related-record-filter="false" data-column-width-style="Percent" data-defer-loading="true" data-enable-actions="false" data-filter-attribute-name="" data-filter-entity-name="" data-filter-relationship-name="" data-get-url="/_services/entity-lookup-grid-data.json/f46b70cc-580b-4f1a-87c3-41deb48eb90d" data-grid-class="" data-select-mode="Single" data-selected-view="1327acc1-258a-e611-80d6-00155d88dbcb" data-toggle-filter-text="Toggle&#32;filter" data-user-isauthenticated="true" data-user-parent-account-name="InPath" data-view-layouts="[{&quot;Configuration&quot;:{&quot;EntityName&quot;:&quot;adx_portallanguage&quot;,&quot;PrimaryKeyName&quot;:&quot;adx_portallanguageid&quot;,&quot;ViewName&quot;:null,&quot;ViewId&quot;:&quot;1327acc1-258a-e611-80d6-00155d88dbcb&quot;,&quot;Id&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;PageSize&quot;:10,&quot;DataPagerEnabled&quot;:null,&quot;LayoutXml&quot;:null,&quot;FetchXml&quot;:null,&quot;ViewDisplayName&quot;:null,&quot;CssClass&quot;:null,&quot;GridCssClass&quot;:null,&quot;GridColumnWidthStyle&quot;:null,&quot;LoadingMessage&quot;:null,&quot;ErrorMessage&quot;:null,&quot;AccessDeniedMessage&quot;:null,&quot;EmptyListText&quot;:null,&quot;ColumnOverrides&quot;:[],&quot;EnableEntityPermissions&quot;:false,&quot;Search&quot;:{&quot;Enabled&quot;:true,&quot;SearchQueryStringParameterName&quot;:&quot;query&quot;,&quot;PlaceholderText&quot;:&quot;Search&quot;,&quot;TooltipText&quot;:&quot;To&#32;search&#32;on&#32;partial&#32;text,&#32;use&#32;the&#32;asterisk&#32;(*)&#32;wildcard&#32;character.&#32;&quot;,&quot;ButtonLabel&quot;:&quot;&lt;span&#32;class=&#39;sr-only&#39;&gt;Search&lt;/span&gt;&lt;span&#32;class=&#39;fa&#32;fa-search&#39;&#32;aria-hidden=&#39;true&#39;&gt;&lt;/span&gt;&quot;},&quot;FilterQueryStringParameterName&quot;:&quot;filter&quot;,&quot;SortQueryStringParameterName&quot;:&quot;sort&quot;,&quot;PageQueryStringParameterName&quot;:&quot;page&quot;,&quot;FilterByUserOptionLabel&quot;:&quot;My&quot;,&quot;FilterPortalUserAttributeName&quot;:null,&quot;FilterAccountAttributeName&quot;:null,&quot;FilterWebsiteAttributeName&quot;:null,&quot;DetailsActionLink&quot;:{&quot;Modal&quot;:{&quot;LoadingMessage&quot;:null,&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;EntityForm&quot;:null,&quot;Target&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:&quot;&lt;span&#32;class=&#39;fa&#32;fa-info-circle&#39;&#32;aria-hidden=&#39;true&#39;&gt;&lt;/span&gt;&#32;View&#32;details&quot;,&quot;Tooltip&quot;:&quot;View&#32;details&quot;,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;c2d22837-a5c5-4b66-98e7-d22e88972520&quot;,&quot;BusyText&quot;:null},&quot;InsertActionLink&quot;:{&quot;Modal&quot;:{&quot;LoadingMessage&quot;:null,&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;EntityForm&quot;:null,&quot;Target&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;e0452e78-aa34-4ae7-8964-0ac72fca1b0d&quot;,&quot;BusyText&quot;:null},&quot;AssociateActionLink&quot;:{&quot;Relationship&quot;:null,&quot;ViewConfigurations&quot;:null,&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;102274d6-9cb7-4ef6-b394-e8ec88c0da34&quot;,&quot;BusyText&quot;:null},&quot;EditActionLink&quot;:{&quot;Modal&quot;:{&quot;LoadingMessage&quot;:null,&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;EntityForm&quot;:null,&quot;Target&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;1fbdab01-c424-4943-974b-02db858a620d&quot;,&quot;BusyText&quot;:null},&quot;DeleteActionLink&quot;:{&quot;Modal&quot;:{&quot;Body&quot;:null,&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;6b5f0bb7-aba2-456f-918b-2d3f23092932&quot;,&quot;BusyText&quot;:null},&quot;CloseIncidentActionLink&quot;:{&quot;DefaultResolution&quot;:null,&quot;DefaultResolutionDescription&quot;:null,&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;f8e32790-c785-4f16-9570-ec520aeaa491&quot;,&quot;BusyText&quot;:null},&quot;ResolveCaseActionLink&quot;:{&quot;DescriptionLabel&quot;:null,&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;SubjectLabel&quot;:null,&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;9163500c-679d-4d40-a792-bce9d3ff389d&quot;,&quot;BusyText&quot;:null},&quot;ReopenCaseActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;da39763a-2e85-496e-bc75-9bf5a0f2799a&quot;,&quot;BusyText&quot;:null},&quot;CancelCaseActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;1f7d5e34-5a14-476d-9e3d-b0cccad01a2d&quot;,&quot;BusyText&quot;:null},&quot;QualifyLeadActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;3ade8bff-8f35-4de0-965e-c73bbc3c46cb&quot;,&quot;BusyText&quot;:null},&quot;ConvertOrderToInvoiceActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;c88e2a3a-6def-414f-801b-19cdb20462d0&quot;,&quot;BusyText&quot;:null},&quot;ConvertQuoteToOrderActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;f69be8ba-af73-475e-a413-3234ae8a0bcd&quot;,&quot;BusyText&quot;:null},&quot;CalculateOpportunityActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;05139a0f-685a-4d0d-8deb-ce46dbdeb020&quot;,&quot;BusyText&quot;:null},&quot;DeactivateActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;03633bb3-e264-4e1d-bbf3-cb5f498446bc&quot;,&quot;BusyText&quot;:null},&quot;ActivateActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;5cafd06b-c75f-4f88-a64e-53283f12c790&quot;,&quot;BusyText&quot;:null},&quot;ActivateQuoteActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;ca44ae8a-655b-4841-b7c0-da84609133a0&quot;,&quot;BusyText&quot;:null},&quot;SetOpportunityOnHoldActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;276d2b89-5b32-4928-9ff3-5948e40cfa28&quot;,&quot;BusyText&quot;:null},&quot;ReopenOpportunityActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;4e0f8e75-2310-48c2-88d2-08e15ddb1738&quot;,&quot;BusyText&quot;:null},&quot;WinOpportunityActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;6e72ecc3-133c-4c91-aa97-d6b692ef4b3b&quot;,&quot;BusyText&quot;:null},&quot;LoseOpportunityActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;a45da3fc-6ef1-4c4d-b760-f7ab166f526d&quot;,&quot;BusyText&quot;:null},&quot;GenerateQuoteFromOpportunityActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;445f82ce-9553-4174-ae0c-2dd1e6e57f0a&quot;,&quot;BusyText&quot;:null},&quot;UpdatePipelinePhaseActionLink&quot;:{&quot;PipelinePhaseLabel&quot;:null,&quot;DescriptionLabel&quot;:null,&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;d466646d-7c16-4cb9-9107-cca7f6130886&quot;,&quot;BusyText&quot;:null},&quot;DisassociateActionLink&quot;:{&quot;Modal&quot;:{&quot;Size&quot;:null,&quot;CssClass&quot;:null,&quot;Title&quot;:null,&quot;TitleCssClass&quot;:null,&quot;PrimaryButtonText&quot;:null,&quot;DismissButtonSrText&quot;:null,&quot;CloseButtonText&quot;:null,&quot;PrimaryButtonCssClass&quot;:null,&quot;CloseButtonCssClass&quot;:null},&quot;Relationship&quot;:null,&quot;OnComplete&quot;:null,&quot;RedirectUrl&quot;:null,&quot;WebPage&quot;:null,&quot;URL&quot;:null,&quot;Type&quot;:0,&quot;Label&quot;:null,&quot;Tooltip&quot;:null,&quot;QueryStringIdParameterName&quot;:null,&quot;Enabled&quot;:false,&quot;ButtonCssClass&quot;:null,&quot;SuccessMessage&quot;:null,&quot;ActionIndex&quot;:null,&quot;ActionButtonAlignment&quot;:null,&quot;ActionButtonStyle&quot;:null,&quot;ActionButtonPlacement&quot;:null,&quot;Confirmation&quot;:null,&quot;ShowModal&quot;:0,&quot;FilterCriteria&quot;:null,&quot;FilterCriteriaId&quot;:&quot;79b80987-7918-4b14-ad4d-0403e7797849&quot;,&quot;BusyText&quot;:null},&quot;CreateRelatedRecordActionLinks&quot;:[],&quot;ViewActionLinks&quot;:[],&quot;ItemActionLinks&quot;:[],&quot;ActionColumnHeaderText&quot;:null,&quot;ActionLinksColumnWidth&quot;:20,&quot;PortalName&quot;:&quot;&quot;,&quot;LanguageCode&quot;:1033,&quot;MapSettings&quot;:{&quot;Enabled&quot;:false,&quot;Credentials&quot;:null,&quot;RestUrl&quot;:&quot;https://dev.virtualearth.net/REST/v1/Locations&quot;,&quot;DefaultCenterLatitude&quot;:0.0,&quot;DefaultCenterLongitude&quot;:0.0,&quot;DefaultZoom&quot;:12,&quot;InfoboxOffsetX&quot;:25,&quot;InfoboxOffsetY&quot;:46,&quot;PinImageHeight&quot;:39,&quot;PinImageWidth&quot;:32,&quot;PinImageUrl&quot;:null,&quot;DistanceUnit&quot;:756150001,&quot;DistanceValues&quot;:null,&quot;LatitudeFieldName&quot;:null,&quot;LongitudeFieldName&quot;:null,&quot;InfoboxTitleFieldName&quot;:null,&quot;InfoboxDescriptionFieldName&quot;:null,&quot;SearchUrl&quot;:null},&quot;CalendarSettings&quot;:{&quot;Enabled&quot;:false,&quot;StartDateFieldName&quot;:null,&quot;EndDateFieldName&quot;:null,&quot;SummaryFieldName&quot;:null,&quot;DescriptionFieldName&quot;:null,&quot;OrganizerFieldName&quot;:null,&quot;LocationFieldName&quot;:null,&quot;IsAllDayFieldName&quot;:null,&quot;InitialView&quot;:756150001,&quot;InitialDateString&quot;:&quot;now&quot;,&quot;Style&quot;:756150000,&quot;TimeZoneDisplay&quot;:756150000,&quot;TimeZoneStandardName&quot;:null},&quot;FilterSettings&quot;:{&quot;Enabled&quot;:false,&quot;FilterQueryStringParameterName&quot;:&quot;mf&quot;,&quot;TooltipText&quot;:&quot;To&#32;search&#32;on&#32;partial&#32;text,&#32;use&#32;the&#32;asterisk&#32;(*)&#32;wildcard&#32;character.&#32;&quot;,&quot;Orientation&quot;:null,&quot;Definition&quot;:null,&quot;ApplyButtonLabel&quot;:null},&quot;ViewRelationshipName&quot;:null,&quot;ViewTargetEntityType&quot;:null,&quot;ModalLookupAttributeLogicalName&quot;:&quot;adx_preferredlanguageid&quot;,&quot;ModalLookupEntityLogicalName&quot;:&quot;contact&quot;,&quot;ModalLookupFormReferenceEntityId&quot;:null,&quot;ModalLookupFormReferenceEntityLogicalName&quot;:null,&quot;ModalLookupFormReferenceRelationshipName&quot;:null,&quot;ModalLookupFormReferenceRelationshipRole&quot;:null,&quot;ModalLookupGridPageSize&quot;:0,&quot;SubgridFormEntityId&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;SubgridFormEntityLogicalName&quot;:null},&quot;Base64SecureConfiguration&quot;:&quot;0UtkLJgEwf+qVhROycCEeo7y/Jlx6IagP5LbELSH1YYNnz13D9wh+FSLImWgQ7TvB/ukl6eqgTjoJ9Wm48uDQgaGGbzUhiEXCACj37I85aIf+RTl9A7m2GHJTre7khLnn0FjkikG3OmsaA0Yafs6BxL+hCAIY/kAn6qWvPqgne/7gY8ZkCGY/dZlLD7BsJoNvNategY7vHXRH1MR4btccqoMYXnb837FJOVPs0BsQBjAWqW3hDLzPaGhe+hvNpWlosKybwfTeaUtfscQt5NY6HJVB7SxV4yx6gzEZvRG2NivdtAqO20pSBV6U6cnhhNJdN0pog1Ucxf28fPdnPYn7eGh0DE/eWvwY2OPodSDnh1K4bAm7MF8vhGcdYA/TPCVMhL+TXOJqhTX56NuLfVWps2s/icV9P6Ny9aXhSlFw728l7ZN0gJc24IERpqoregp/LlUdxc/6DI60fEZfAvxtKSxgPa/zzbPBWHfBrgSGNszytgI/b9/mhiSM4EDU34Xdvm1rpjor18v4yRa3MvSKwM8o9dyR5T6ZHo+0pCIX/j6r2j3hKJqpdRCf15h1LsOUCzkeVp6rHYeHYhzis3CFBK4q5MtN23317QycImNPBojxbVuY9NSKE3LokPQ28BQU6SB0cTUMW3zzmR0RrH3xiKgCvwiacrbX0jXABKluYuCQCg7HU3A/Ol1U3R0QMHcBb/Qrnbj6CeAPu7Zv1lNm6PNUZHnfAbjpWjmGc4L0R3rkefqVaBSif+w84Nnfk1+0OXTiz3EfnSVCzseMhy236+DtJax2/qRbIsaSIuA/4Y1HlKKxYrzkj/Hf2zy0Tsma4mm8Z5rWQIZL1dRB83iNCyfaGvOGUmsuGKTjUDLtOIqipT5xsUzWjdjjRKAoJ+mYG3TAtz/MjrM/0i+ZYq4cLtRrgVnGsNrJsP96Ggo8aI+6rJ93gNxkWD8g+L7e4nKejpzE9MPfysA7MqQYQNHMwFbnTNeyntHMoY4n0iOU8aPRR8eJjXYiiGFAIpvz1m05iOZzMdEXe+76TVbxVjD79LYINRnkgh15kgqJN5DDenqhIDYIM42F8e7cYbNDwIdTNmgjBWV9sk+cKoeDHicWHNUvmevr1KzLsmowZFpFWDs/aDj/W2UQw2+S4hQP+Zv8vtchGzvF7EaKq9o0i30gHm//v7+EpeZkOZsk1iK7tnb+XWMKylO/jxGWgml8BwZsVbemKPNoirHP3Vb3UhEmxRH1QuJveSTzxV+vGNWakodReJhAJzpeOJlOVeD3DgKo8KXnFSSs1OZ2asbaL7argGsF5juV7bpfkgMJQFvLGdFCe7HU3rfNtXyilrc5LZ43KyNpPlzlkw9rUIuiaBU01TdSz7Xxd0VwRUY9RO2nRfHaswh2oCYEwSLiEWwYedEYSDZIuBM1qA1cwXVBn2/hl7/DR1KdcRNZ0zBjM2CUq1Fk2WO0Qcjwl9xn04fijMdH0Oj8BVp71TERjRHmfI0faJgY+24mrqtgaS1ftVQeC9ZJoUXTKNrxLuARkLhES1kN4ZNDfMub1vlf28sR6+M1PGPFEZ+1WyBgarh1AgAuQCn0kfUE3Uz/yXdZjuItanbWUbeVc6ahzuxrJzWNoTeFop7O6BvtNB31TeEW+7AKokVcVYXoEUJWKyE8ww2O2QuthDz2IJYsbmJukkmDZSUAw9qP2zlnf0wtL57lkZqfdX6KfNnr1mzCkj0i5viNAd+T2bvnyHQAFEUjjcr57xeAZONC+l2RfDdwZQE/JT7UNcCYKrOGhjZeR0sKu0dtWYXOixNp4IDgRdODhpUCgVLPVzTXN8n9E5JSeYI+VX4owrlISGofgzAZr3QV2dKzFqxs7m/vMcDPxrjVuLHhAn4V4EuD5oxOENRTqghfp4AdeO808xef1+g8SlbNAbR31hwXc42eGLYP1Num9vYO3+DG62vBxZO3S/ol60OnDfe61cLlhapNAaQDmBCumQC95Z60tu29xbYFLfk1YI0SOVsKnVF7nYxAcbN0dYOpHKO5s4rktAfsxH0TfUaCj8bLbxGwKkuKtDxvhaVAUnHNsXViuNpcuCWr9HFYk8a85YvavJ+q9t9RZPqOoQAzOx/wU6wsEJAJZCpeVA6y6ZVFc8VgmeUbZzZ6WMVX1B+c7CrlFq+/Qbmkx0Kz9PvVl/4+xjhTwHrrzRHDrBpuGDSxVtBVRUA7x+tVDeB5njYcQmC68qk9HOS5L47f9Fjs2PUK7Ka0oyrdR4DjecZp/SaxdRB0nOk7uL5oLxipfVkt2vdlETQJGSvE9/HQPYYtsR39WflJpImZG4NoTjlWkp+GdbXYDURaTU5uUMUHpFrOslczGCRzC3aIHRiwVQvV5YhWI8Q3zDfmvs9KBgAgkaIS16JeMkcKjkF3j0UaIxKCLbWUsYmY+pQOGi3SJNHR8zcEfiy4556rGX1GvphgtqyLN2Gxh5GGlGM4kSzo+Ev3fiwsmecBCAWJkeaOZ/2O12jnfKxQh0FnYsLnytAyPp4XTT7oq/64tK8gjPKo1XrmO0itI2PFOnYR307NdjzbDrZsYJAcM7UwyuL4u28JaC2PDGcrIoqYF9M4h4HaDpl9DQAOlHxh/sQUc+hFq7zO+gDw/OMJLtC+CseaLqpvvjdUhvYYRNW8oRiLYNTMojGQabzZTggxZM3npnCARak4E9WeiVJ3n1ORHUi7cW8NbQrvqnsak8AGqjqk0ebj696kzvKhZTdYP1lwD9Dyi7sZX3tsawNdnDD020E7Rz02RKKIUh8XLg+kgRqLKjmDL4NOtx8OM70GpRwKhcZpEUtJ3bPKRntjsCdGYAYW6xb2qspsWeiZdco8zMtPwcjH+g8SGxC0GnUD1CMxX9dpNEKqErEDoxQu8258HRDSAnI9LOFvk1ocTzOBAmFwW0ommz65pWlpOQyAOEDNuMJktUdzoyPY5Inl7JbkMwDp1/7ogxNerc6o55fbYJW7wLpe0dUsZz9prUP3rGiZAFMo7HLMyLHoyagXMfXiIE5rFiMByWUzMh4524m4x85Fmb6WBNPRZ3p+P3UgNxEg2WK0fInpHoPwr7GyIzz57L6KNazVyCYgpSBc4yrlltNXd21PLpdyKcGJb6TPrEC5vZI4i2evr5UpRi4su5GS2iPER+oFzEw9dj6/weqYF/8gVsMyNetIMVPpf83RSP6cUDNy8S++tU40e17Tj8DIKahAYoWAFojRg3Xy8rSG4KKmoABGPUxsJ7T9LB9PGY3PrmFuHQ5myL294OxHEeNEcTJUUHDBGqudvSRPXJXBI0hbsz/LKIROJ8TS2BsIVijusEQWVssyqOUBlsqL2JO/nBxgaMBoYAq3XE56TBdkWeM6WdxwnvAixhr5EpK5uedXmyB4RlEXtU3fRnPW7vpavVJNQCFrL4ouESg0nS3Fy/0HeXEKq632YX5GwpKYiIzEanzUePBIbzZMGNXy0w4WcT+BU85prd3i+D4+KiEkI2DDAqHQvyNOItTwEXfLMumoFsYrje2YrgawUQ+ZJOV3EFQA6mnsEAjfvVmMuQvYNACvCytCUinB+Y8UJVusa5D7AfAUtfsRhUCBOAsmDen+9Xdnrja/+RuL7qpPFKlzXNF2HRlBknt2SHUV+l/rtnTNvISQwBgbjJITNd3j7x8rqIvoTYrPkcmD4p/qavAj045wf6dJiz4FU9mRMLcbzeItKDl0EcgWbeeSV1V20dzD/t8+ufSW9nIERvbQ1aSFjM7QmBjI05Sbeff6DwRMYyDXN7DWmMtSa7fEbGCIXHDjCcpxyd08rJBmvoxCUwQbRyP7fDiW3eVStMFeVnB97yKIvIwBftJrIi/LOQRfo0pYoec8mRMvCKpbKc+pbp5I5/QH79PqG84qc2m0kciv4EFbHQRKokVp6PdYXTSrlxepFQMjwe5hddVXbmOMzzYszq8pB0CHd6tG6A4G/Ajw0lxSzG6hEKoWHGZ2tBGs14itXDWyKXKBoobMmen5PInCKVVyvNR5f9SIv23DiU5O9Bla4a6UPYgDS/r+h2XpnlPqquim5EgrED+wQiqjUdGEimVZNBHOjgqIWYOiyeO9+3sBxfIS3B/tJ6YFeu4qDbxmfV2V8JcoUrsDDGmWnDyq+0dhK4FGdgFORKZ8s0kKZ18LHua2kDfRskSYSGD1D1znMIDphiDP62UpZ1w755+YVlXw0wzRomgcArHYoPBiBVW5EmY0RMDlA96dram7H0IO009HNSyXN7qoqROyCUWRuPcJ9AVQk8BqjN/uyrnwR4cFXtWUs7O8WHFwjkLtaWbL0yzV5JgWpCGaS3pf3SiO2DlxPSNNiiKf/Qxyqb+Kwi2VFcDTzANs/J75AGWSEwjziVE2ki8TZ3GPido0+1IixVgIKQjykc3x7YbUKYchI8RXcPvhuA4GW27v90dmQaiiDHwDSYpN0OhpRJLaKt67tEwwD1J5qXKoSsJFIVjq4AoI0kMjZcrhEK6OD0pD2iP2ri2ytGWwRGJs+l8vvq7ydFPzX4C9Dn1dGeyxIeGHGGvZjZAmKS00bL7ClllStB2rI9+AxLj9eBOgffMpZm43QqglkOEwE9ZzAjI54+MrrUtB/Pt56jzmtFlReRiC7S7s/ndiflV97d4d9OFg5perOGQhjxZPcsleRuRc36EvT8idyffUhCCL5Nz6QbukTgY/Oorj8gYUejLEfFvgfipc+urnEjR002VgjD31V6+JDSl7kQAA8KH1Uu/d1tPOAjJG/OMuQLfHxdVx3pZFOeR37lKfzvej7CoYi4djvGjq2MbJT/BRc4sMQffogbIdw6RCRjZKb3BGfl8lz25w7GRKzSvvY66tSJfLBEKbwiMlXX4VXTib4miCngsam2f+qYo/aidnVxHpDVPLMcsMXDrewxhSE6KxMfsjmWiBWdoXeHN5Gubc9iD71NHd5M3acO2VHBikXSOMWZ7Ap6PUJwl+52T7enMrE8QnF4YwU/VG3zLKpiH9fouSyTOIp8Ezvz/eAGC+YZcm37BOBEhYqujnnj0AAKT9PfAUxtoVlQuvZz85gYEi1uwFPukrtQO/hcgUhaBZ7ozOw3ln+TjgLAq7OlUB5ySS0rFHR7y2Z9wv912ZsVmu9/QDbolaTKoZUtia67BEG8lAZNCZm98S6bFAVDRAe+lzueMV4cJZGWW0sThMJsCb09sVmtUk/xjif471OLmU+tj24rRyOrKtxt4R5RNsa6aWb4S5wdaLuE2UUo/vjEWZY2PIS0zvEXaQmNPjcoJt+cUETnEvg/lL7qdAcOBwHbv+78fJkdSKBhCU6NSttzfso5pLDOmZiUwenUSMWh9LxR6L3xGes9jhTHWEVHgRKGN9dJb5FnbgbdyKYkyj2bV78Mc34hRGE8029G3tTm6TfEBVCk3v/1h5Z39io0dAaEyAkwCcXMp6mYtnHgpL0jdkP0rLiFlb7mDKCW5ObPBMaeuA1vUGEQAJ3R4rtC+1mQBaWlnj7r4zgxB8eD0fIhNA1KyBPUCNHkpmL3n6VAM4AlvencxaqskLAh5SF8JmzwRGA4LNVadoGEzCdFpjoiwFVh05xBokYwP181H7UETPiHuiUu32hjMBrbmwi5HCk7P5v+OuqJp/cp0fV6Y8yFNIdZb2bKbxWlYOjYKCUKH4TwMcZxyg8UjuuGrsZ5pDFELLRPRcfW+5TjiVizkgJBJBogcBwe+YpdcGnvoHQMqEZVht0+t51CgO2Dl+KPgBe8ZIQpJD2ncDr9rnFJz5WNAsGgtedGYj/+KgEiCB6QUtJfxVUi1aRe3N58xyrostBhk80vEMtSgGkjDucyhT1O4wGFknG0j0N6hjPnpSrdOV685hmIch1fLAFjulMNEIy7dhBs67pmNK1q68Si2UGDkNc1BbvYJGJGhUwFMvl5QMa/fVs4Pmmm84K0yWckEO3jqju7fCFAMGcbMamw3qoi40upgjGFWV6jFqkUTxEHbZXde8e9HY4WnNbLgJZFw5sm7ueWHkn796RUkGhYtnhc/q19bgiQEXIeU66ea1ycXcTAQNSCkokbbWKarbm3D2zs4Fu/ESDb83l8TjlwMJ/D2aNCf/TOn4YaB2BPuw7QnHWcVq8Ws95zEUy6joiwkql8PgHeK4/3810XzZhN6oE52ze38ovUkdmGAKWWj7qwe6EfpkjvdnJCdhMZFyNUf39upPp3sKze1LQrcEcbRA5ALPcHYU/teLLHDOsGFpAC6pxopRd1mfjZmQdWJ+mrR5ndzp2Z10r742A66FrN4FRkAE9M/fW0Qo4EiOpUvijJIcieds/og3dNtqPgtFDeXB2iSRBVZzbCYCiu3JV4u879Ozc3EQQTS25m+gvfwbjB6uAzpbhTOY9ZGlPssDw7ONQF59WXY1T/K3cEGfASgdicmL28YNKHQDgDm1EOHeZ5lYVragpOZUegI9JJv8hpu1e1dXpgMRpJHZqoivI3z6POqvpLDePUqSud5PSirqT1KE9k3nWIBHW2m5wKVBIAJaeOEl9+HWcqrKt8g942rwuQ96yvObrus1DSYfzNTHgiXCYXiQ1I4CLfK2/x7gibI4T1RhmwfV/C4SATq2RBpD0RbgaQeSPjZeyibeC6FmsqqMgSPkZzpwhQqqZOBM6+JUusbDdZx9+7GMipQT4JDZWLgGDwgdme66Pg2KPbwQWi5YgT85Z+wLB3mdgwzA55dRVg1BcAvQUjhqw8iF3+i8LmBzjNOxhBPKWhAWOPZYodX7ZxMWdguS8K1TCRI58xRz65rqs3Rczmn35d9VM+t9L/023LSkyOKZNmlp3EslCX94Z0V7By6VhIG7wkCt/GxfdXWOQQNyfGZNrVXhOGG99jqc9DxPMuBcXvcWFCeUWKd17QIXj86MGKukNicSo3TWvKoVQ/WA8Lqg2i065IVuIoNv2n1xgWxFud2IRdQadi20vbMtbZflh5VhJmmTAu6lHdMdGPE9lcDZ5tv7qGLsP3+WRi4G4JjKZyN734Emcx4pJearK/8hYXu2xJtKWx1p0Tq8V54+LgbjHcXzam2x7TVPQspJsa21ddVgi+yhM/Ae2GTdR8D4xzw+99DQ7DhU/MMC7RWgTUUPq82xJ1Ix8dcPblMtX8ssv/xSVarBi4RUbsIMJXG6dBiwNxi4UpOvFPmuMbr9tBsuIKjys6xZLIDkU/3HrkxDRPU9t7DT7OFcYywgNNfkxGnEczJ1voqiLK59YnufIiJofE1NPjGfeGDfVZ8vNKMoLyJEKoIPwTnYfzzlvGljNI5nFRWCTQgtMhfLU6NDYQJC2J3zq2npjt7Ag4MFKv7MssOgiisS1xmKGnIRMTCJPeaOK1t/MCRJ5XuG5O7xzXrpXPRh8Iyh3cUi719phb0/wN0hPOqN0tMxLRT9xPqoDVuI++CAiY4e7vSsn7P80ch0hJylJtJmWH6kkrKPiMsXDitE4oGhyaTji4iLN4x4yAkThXe4Qf8jkIbp/zI/U4avVyhTMRKEUCq9YELPIS0rXY9ay3e5rRf8TzhhFZ7eqQE8O3VLe5fJ2DigjP4jXfL7fipbJI9CQ4WiPqK9Fir2pR7CXwGKUsSUbBfMKNbqh2RQqlkZ9Rojlrt0v3M9QuofhvTIyGJujppasleZ1XCKyywRb91YYFmIhri+JmYz3WwGffG5gIOdJZb5Mqk20HnFe0pBnyvdB7tc/Gp2DvLMEWIMTBVNjIfx29D/nk4EOjgSqUn0PgisOZ7NV//1sxv2mqD4wyI3alTe5SDaH6DRSKLlBqFiepZanFNPJqeTWQC4AiRemg0N32kQCPXqwdUxYyiQhJQTnYKcCaUmv+dcVjSZg9Zk8+6y/f3qqsy3siIE/w2XSXGAj5KyV7OuGV4L9chGI+KDR1cRk//iLyXFeV5byAs+K+aSXbBFDgTex0qxlmX+1eFOGetJ9We0gGA5azZnTdUtsfKku8FZHL9OkLEb+b3zQ6N7tnUrt37l62bVux0cSp2+XqN8nQC9xCwNC1b+d1/Uk+IxzAbRGSJcv2gSPF9HWAEUf03fmt/wr8lFlGG8bs9QB2N+8pdB0UuASQ5UsoOhQzFVMDPNKQ7dcySmKjERsfSp3uwXPeyyn8JO/uJHfr3YCAwYrqC+rjPs4ZWqA2ZREFe85qj9uVbDYzRJ904VWhIJkAkAvu4Gi/yFqFuzR+W9n1AbUl4X59tWvrUnT6+T5DdINB5u+iLv+SLiDhen2DWqiI0F4RjQyFHg0V9zBjgO3EurS2LazAG5s+kIvor0DbWXyuoQrH4aLsx24QDxuw8CDGlyZ2nbnCSR5NAPHy81vMGWc3YRwz11RGC3mtfIrMUJmb7Q2FBAlr2GNDCAx4YWUC+cCLciiUD5dKSYrBoPRHJYbQtacoWrAFFSlmn6BIaoIME2nOoA62ZODfHTxSBW+XEx5t2+DLFBfSK2t3TB0WiVU3pxTro3WqhpSVA9cp0FSGX1SM7GpBlgO9WMaVnbMrSB2Y4GxRnRVrrsIzVy1nxuUIY3SD2uqXHBmtj46RLxsvC3V9hT5OodUQjWa2unQ7GlKwM07FhQL1e/KBuMCOqvERdBDRG1SSNhCRWggYjyvjVpgI6Ng8adgiV/Q6P/sG6hZ/vDr84IVe/wV6Z59vGw33glt0lLEQGtB/3kko4xeITeawhwGa/vSxcc7mPU/n2/yS5Y6JP7OxNJJ72IwGfSrihOJQwsm4W5mB/biP6PQ0Z0gkDu9fZmxGfuZRn32y02cxOO7x1bkmQtvP0+oXjh7RfOBTDrw4QDHwKTLfClbgwNN5LkJpNgfSrVqbCAeNBbeGGn5m2YfVF5/alcnQ7QIZINGbH0+aNNQa4cPLc1AQtRbGiXIdaVKAQJz6UdcVQmuJnc2EBbIkYqTCdveM6r3PQMRIJDXf+/dg3jgEBnwQ+dzRgg9Hxyc0KNquiiJkeG5LMc4TiyTzwPMFuXxtKNEkqOqnrt7UMK+BHpSGzYamSCjWYLQX6d0ChTH9FoZsYfNsGI1RHBh7cH6n4Fe1cITKXWVSP9XsiGGnqMyf8iOz05P2Z0s+HeKY4We4lUYsZZ692Zs8OtPYRdDkse4VxebJKA9ZIxSIBxuuRwq547diE6fYHvRkcO2S/Czlkg359NvIH7l0pT53dYdZwD40hSzUc+vZzMVvYHg+ApYARBDgRSOAE+T10jh7nBK5Z3y4njJzKEUj20sYxImOs8iSnzJA3xRK2FwD/kvx50JcqberzH80jdNXUlUhqpCxC8VjSzl8qP0773sGGq6h3Fy5IgRwFAawKKsjUEgSOXlpvaKFMsOrHvGVZlJ8F3E/aTwH/+xxX3w7yhMCMZdI1o1vXu4Ca0Mn8qJtoaXw33cFFHEtS/l/RwX5CZVjH0bq/jDW6miNK7MjTwB7EsD/9jGaQX5rjp5Xi9nO0a1kY9WLe/T2kn1sRNaZr0UEWETYXg4uwPfJd0rpMKDpckafJHbXP7GI3NM1vEDO7/uZeDCushX6TSTQtSjwAw1Vhq7+FBW09aHyDjX6rejbFxeT4x9v0mx4hSlHW/Jx3lLZEbISJpFPGSViFc4qMBgADZesShJymj15qL7KDUm/YnWJBAmjWv8ED29cLJjQf2U+5fctQBCXHS01gGBYT2bHhUXQHIZPw1VihtDEUQcUil7BlZMznyo0yz+KtDEJqjRYrOGNAmkALHDwtJzDYLLj42VJEhy1rLJXIginE3BAnbUNawtvVr4rbB/uKxv4TnJttkObX45A6sZkK42VGkc10Y3mRDWc29K7nsgNdhVjC9QYfmAMjhwKzehXrT+sDmOTIN3Z/GW+UQrcMHz3+ivc3Y8BsYtEKK61uQ7CjTfOyjQCTvXqPdDHmjseeKmH/bcu55d18fR5umCG0ZT7euie55ReHsSTvylIpEzzMn0dY0oo8/b4LQXDJqd7MR9dBU6Ed/Zd1Tgmfk3cvmdlZBqZLwT8pvhqH8XwB97U5fY2KnrbpEbTg+r4gIIF3vos4bHLI7o9iWThn8BvRdt2013/fe+8lr2excHz9wEFYFuBXHcJ+LTw3fdiPgfVukvmDUjdapMczhhqoNIH6lhUXcRaV0rzuIdCoSD/mVUKVKjU9z4xaY6aa1PfTftudHR6VpUNbdv49lEEQkMYno1W46T/QKYNm+46m6xQ9PxANdAQ42IXitc8fUpGZqwshCXj2bf6r3ivd14AAiEDJAtVvMlYp/ErZIx+Eu8afijXmrgQ6ZGv9wCCjPriOezATu0G0OUc0YT8i9r4qhDLcKgZLXxux8eorjhnfQIrsiAnpW24pCB3qtZpvcom34yxcc52pZEB3p0+054TRDFWHM8NuNYy69vt6i2Yn7G3W+EBh4LVvbJY8XSnVaT68g3tnbgoJ58mQL33fW8UhhICpQxER1RWaoYgiSC9IhkSSnfUE7JMS0lQJTpaliQuAg+xfrhPewuRQaXUl3p0qmWocw8NjZ3wyl6R3WjgB/BgZIn1qZqwuf173r3Bgpa3w00o3zM7o/NSADFVD8WO/u9UkM6TbxMuEio5hP1BcGXHMr6oXxZCuTiFxbXhKKZJl/J+WLydHsnxIYH5tVblJY9S7TT+nGqcLCXx4KT4c9e7nzWxeNaVXHpQ7oiw7hXjMX42l/6cfFqvS5KUcix/QxOQN/xJAEFLGnhiiJlc1e0GR+J61ttF/MtVNb3OaA7+uY3hxnGXuO9phIrYhpKi1rCd8KJI8P85NyrNNG3I2pm0WwhPw2B/SpEwSEWo7p9lTkV0cgmyHax8Ydd47c2BqMglHtzg5t3A1o/T/xzDm7g72fFmKLnsotBGmZw2EXiG+59xhcF53lUBpJgut9558YmdPuMIgGFAR1HFI/Zv2oPlUyq8oEScDDz4IPjtecvEiz0IrBlMV/KJFITf9DTOpy+pmoDnXFQl7mk5Dng3+X7J0TSUSlhpNsX5WspZ7e4GRqiw0LTPhqZNjxL+UbUPwYWlk+Ubi5HzI/ZT1RgOpl1OLv0RNHdKG1KhUWe/XLv5/BLyAozEX+bPlsyfSF0+88cbQZUrg2C6ezRmOo3usNOSjKhu4fps4MdwXh+84Md8SyQ5t4AlbxVfg5Yp+A3TzULRL+jaTCn1f1jKFkoOMyRt8Ax9Ng0LCCMUap72bSDXfPOIbR35hC5IyMj69/UJjaGPzT2wJqhFcn9echzQNXXjaw1xSIIWs9aYCqobD8LjpXo6Jxa70Fn30oCyW60a0sS8UgkrXPUJtasiJVDSaOhdxTjfHyc7PZRqrV/rSi3dkEU9mGxaid+gafZyxoSFkpSNuVB4PWQD6HBUanhNNA+1cBSk3VrGOH9uH27VyI8wHK8VhEu1NFDwUlMJAFATWvUwR0oqpKQzf7tlyyuxzeDin9dKyuF5CNXLx1d2JHPcc5JJOvWG81Uq2v4dwH6zKnq6Mh/qeHLu/tzazq0LCRv/mlJ697UchoFNn2aCumyGif/u4RBiC5YMoaBa3gIkvvgbENZ/AeHiWlrYHbR3bSMq9tbxTy5o1MVIl837gf3R5Mi3lOJKTB/OaOeiq6xmeZjX0LuKCDB0K+0hytGg3yUF9UIO/o3WRPiefAFEFMPO/tXFs8LKpVS7eDsD2u7WdsCf9MsLaV1sVPxGzX/QD3pecT5mMxD2IJEo5oRMpWoYveP5orPrLjRaGVTu7dnNbSarxmNAZqrdqofpfUVYX5oLe7TxqHWhaO+KyBjQp2dktAyqhQn2O0+U4+Gwi5NQs2KUH1xyY4LE//FD2trKUf2zR0x79Xc5DYOvhBnV+4pqD82GMGyE6aY9JQ38uUVPhzAwaRt34nYdcOtnGl5HDUPAxegYjr8ovLJUPTJ0s5fBwdVx1JVG9YsSBuaxadBRDfaB5YJDrpCDweBYNjtvjzkIisY7zZaXz7zDKLweXzavCuyYHHiZNA31YV/pSJvas1P1o6ZNkXUONDvQn1d8Vd2SfkJsgOHiVa+VH0P+6DHelWo2sn42+NIKoh8kH9sMQbQAMIz9xR5XGUGYz/GaFXTvJCqO+4kZFTOGtF7sEUSopXh9bu5s6dMUHBmr7ER+nHexS3wwm4W+ctwVcfIH2iDLQa97KRAr8Xo2HSy8JF6FRWljkeB1598v6EugW5J5QDAsNZioP23XAPm3FoRvUWmyC8Nv41lg1Kk/ZH0phW8ujdajtBVwAZxCQZR9meGTHhzTaZ2qqf0WwXWVw4eEypc5KOq+e6ZViiKg244IPyuDT3ShKdqzUHoFiBX28QNGFWEhx2Z4E9ptUkHKTVQKpX+DA8OI5amLxmYjIx3VRU3/smifaP4g1KpT7/87n7sc+I7fFKUa7k9fGSx+tKTymksVlg0yqrKr92i5MAT8Tf+GIplli3JlHH0Vkw8PAYktJHkzNL/1EugBqUV5eF0vO9A1Uwfc69dKCsg64LKC4vst3qM/SADc/HXAL8jhlu+OnBnDCf98Z8Ur6HtrQNEbbffa1Z25Fe+OVnOVGEwDrnEip7KQwJW7J2zINX0oE1FGKgnuuYywsaoVE04SpxKKzR/3duDLXKDXwQCEONDghep0kQkrgSKdf5qoxfL1yrcz6P4IYW52YTG5bLmN6LQhsgpJSVtNRo64xE83TPJ33CCE8ZQqwoY5xtltdkNc5ceKbeQ2Yecp9iXy5N9+kO33Iqq/3O95VOQxyIQrCceCOnsoIY/S9It8RGNCwbFMbk4N6Di2jW9xTqP9bRMsZ0YgEQ8OShEYIwaedpzUw/kQqckHvADBKaWoP7oRsiwZzH75DNa6imfiJcMunqEGGMqEclJlwOUhAFtW214e505o0fDTHyKMJL1WH7QryjsZil5sIS8TEnmAIXYh1O3hcbbt8l+NMHd4G0uyPBpb4M76zUVwXmvpLL8FyXK8c8DdaaMCbL225E5M4mjVAdF9xYiQYRTXqhr3dXA9Zq65ZeJSa57gu3HQg1ftWPcnmaKzNHvLbMkiW86A3rE3Lgr+NMzhUItlz0/SVB3vGXV76z3hXE4TvDQG+wNg6fX9ukAn4p/j74EuB88YfoC70RhthIhHg2mAIl5A5jRXFrsjn7hJjIouGSYy3aurJS+SCBc0JNvHENMKfLW1Ee6f6hs6Tp0qA0UMij7DO+EsH3l3Cze/d3ZIGZAdBDsLC9tVCbtTS3U0HhNQAhSncfj9995wspBDmkiP/UergWLEGgAVJqUw+KXj7uOFaiNjE2Fw0zvge9OEn7/2SoOrbSr6i0KQfW2dt/gbPYDz97mrLzOhw7aDXR6K+LaGTHvM6IWMiiO1I+/dALOsXBJtJ37Rp30ftsoLLpbyNis6DQRR4SGhkU1zZIL7B7Vd151tUNGE66c9Hy4Z1LuiEho9FeZteaIAchPIzJXE0GdeJ6jIkfPVgIePCBGYZMZA/J56MSPCUxgMkTbdDVeqyvekMaa8SqvYB0/gjG6jQ4QJII07JgUGYbV8h62ldIoIRVhX08HzUet1Z59RNq0VosFc8fs69gHYEBZkzY2chnAPpMAQ//w07PUVkUXN45UZcFeRSki0n9R7gN7badpwcCk9C6jYSnk2bLUNJf02wlRp11HusStP/JXNVNMq+9d7NXoou+0nLggVfKtVkwOdcMFua7QUehVzZM/ZRpHFRW7s4wwmT/M6y84Q/ht/Fkf3cZN6z8ynQDjj4LetStOYReStz2R2y8lxFJJ8lgCgbJxcZP4oDG937dAtyD6BSViUcD27gkSjdFPhyK1zqb3/WgRrg/DsUQFNWBpEQ6/Z3zOcHcy4ok1eGxheU+OeHPJ32cZKPwYZwe6NjiRSKU19P7j/0Uech7wYqJdGd0hLarcxf/DZ7vnVacfbXSu6WPm8XdkvR1iX2wG4XWHNX0m475kVF/DKPDmamaJPMoXMQLi6FWnPe7MZ0Q1AlQmuc+VCzI8RjEGLz4LFkikqcg4LGkm0cef41y4eAKPSVIGk4CRedGDcD/FQr3ZzeiQ1TJLYRhCEsm1e3eAq+RHynEQqCV1wDpJRl4UAD4NsYExT8Kgit+82UHZTSpkuWQLKNj/rJDt8XwEb2SMwDFxxFjuYdIVSVqRHrAkxMNA4biyR+uS0iCzODwsSuyesrbhyx5V00NE5At1ttXhrzQafi5O54Lvcf+n60+CC1Z4Umvser1Tx6QHpHE5vXed73bk2j5GoTP94tLhwnfUr6+ZuebjooNzD7M7d3QxYHkMqT1ZYME2B9TPzfOyO8YnuFW8KbJqK1S1lgpuxZ19FhmQh2joGO4YAES7ueXHrNWltOWQq8B2RZhYlqEoW+8i7SKg4HYd1b1jdZR71KXK94L2WJkmExdAMnHu17zl0nLmBSeFv+lB0/TVk1jt0qAjz9eSeYL+3WdqbYdl6TknpPb9KJvi6QiBqJXg9TrCqRtUJ6j8JCzcL9Sp29dq2tbxFFNpK9M1TPXvkwS8QOAMSrbNRRJHxOoIv4G0kbQ8YBtBuAgYLfI6ELEFdfBDJN0uvEIHaC2esj9dPIb8cA/pyCYC2DcZceUWBdJEcVgR6NzGs7Kw1Dp/3/mTsZBBIYGfpA1Hm1AZHPiLL9UIlMT57rpZzuAmS7b2fdRfmBhj2cXdODJBBe5/sjyM7zt0SJ81IEfODBh/o2lcWBEAMPhrOM+NnvtTzUxu09ej/gj5eHDDQUWCKyORfikhm6MElXP8YxW+Mla0FpvcxN4T75tvpshxfw0x8XASUmup/Jt2ir3YQ1fEmraGTh8KC6kiq1uIWZoo7gjdq0ZMd7A31u4zrhRk1EljvAYxQZoY64X/2IqIpmySNwjIzi7e/0W8EXyGWOmxXpFk87+sMQg4EvLladi5oj5Wq7YMjEkcBG7PRe7XAOi3dUxEFKec3nZRPXiD2+cerkqaq8g0EhOqFL/L6G7sem2BTJlX/GALSdPaxD/DIAsqOM3FUXhs51UKPFL9seJMw6pY4UMkn0OSoquXs23IauuV1ChksGB3I8Ufzed1QNAJj7H0bYMWYJqG4Z6u9BfI+Zn7ucwwrLGw1Kb0awWrAb5XD/aYZvzP7mVaEMj5FoHPjTgNAnTJCKMuUJe1EMKpe9EBBHBm/YJj+9rbpFn3B1TEhqtVdzg8AbbCdrLExCQLkYPcoxJROlqXVl2nHgMZe7D6r/KiTgGrkVy+NKUsCv9hwSsxfw0mAZu5Sga/nLHbghu40XM0n5lmMR+fdqDeh14hhRzCrClEp/4vOA+Adu5qudeAoz2GRzR0zAx28gn6MpEGfNyfa9D6CtKD/6fM5AmTXFlvb8im2miND6DT4QYkw9J1oKBizo8ERaxg+vITGaItoGKMJdMNNFHiSO1Sl84lQSwTIGH0TAAorCrm16fJsxE4ONlb9PfptsH65PlAp7YqxzuN3gS3BqeAXYeqiLi80fr3ZJFDGwQtTfY6v5ARPmQON9G9eEoalGLAZuSUqjcTjMSKXZwUfsgrZ5XFsvckpa7wGObqTaO0w96GcMP/6AcX4WC0G13HRQVvqsvSDoN4W+RMKnRy0cSDwU2th6BN63L6R7HZDafAOGc9AwNQxmSNA+X65/N8IXDHPy8TTF6+dv229Bj2nZ+J8eIadTyrnGb6o33OVyIHgb/rPur59wYXjVfsihKs4VFQ5IN8wjjecAD26V4A0ALUBDTEzfT1/4Q211xS+JfLThG3u19pgq6Gk6ijz5gDuq3QOkLLdohAT+x6eaGlxzdWQ4rSW5zae/vNJ5SPLFpMS2o0xoj+O7ic1TDtOlp7lx0xfh/9huG48WEN5CtK7CscnYf11mPTt7Jg07aJVix6jYFFUV77oRd/htB+a3n2g93QWXbS+j6CZQNctQRXd9TiuSXAlKzOSGkBRI7uiS3cXZDlXfqR/jb1xmXBUuSoRUz9u+MA7NsS4XYcqvorpaVFQ80vIyqK0DPxzGBaHF9c5ZXWwiPWRP++v+Q42PTBgLPuor/VOAlSB3IjgXkzk3/fYO5Gq6F6K/rPGXDWvEn4PY8OYwxFGOc1eLhSnvfDX8OqO8nvbl/ga0NF+nKT7srJXgs65GNEjPVY9tygXRG8qN8XsFcAhdNlnLkmF0WGwF26oKEqHp8oJsMSuRoL4utx5qEYsJZ7HOIycucUdJWKA3PbnOEHD1ZanVmxEMqDgBMrASWuWIOMpc7j81sMNnf4bexYrARJFIjhIJpMBC7LOZRnqTszniK8SrDE/4XBl3AYPX2wsF8gmennPMXYF/7BzqGKKwQVANm0JTJElZQBp5bpqZ0kjGTWAplXt8cE2pseET14cJEeoWNEFaiRnIMBtB8J/s9fzQnHEt9oqCXMsQgubc0Nk0o8ks7V2awf5gneHF9wokQy6Ll/5v66rEJMMuQ+36D5UdiGf5ZgzustB1n8A5281aiAFSBrCf2q8lEVYy9+UHnwZUyQnudtW7tDnpzle8kzzQTBJlnEUNoN/+yaiFge8k2m6oGteV/KcsxHO2xmJO1NL5l4x1/oZm9ElDpPS5aWmhsNQNnUr4QXeYf/peRGWtug3LAO8PWYWTQn860WlqZY6qemD0uyNiLOfikL1oNT+qLYrZIRmQINAYANzBFJqm08Z6rGJduqS9GEEalysSey63k2UQIio4K+6v7qWuMDfOHjW+u3SqosEV809sFGBUFsktn62URLzVgWAzjNLn/WjjROhF7Bgvm6lCDnRzqEJbmnsjWD4kjHiKw5HKm6VjiLejX0a3SO9DR9A8JDL2io+wp0Ai6oensFBRxA9sa2Gsm5xuer0wuAangJyx4Bes5ka3MUHSYc1NpaZJrmoOO5/i/wuEANI1aW4ffV7IO/8XuHQU2C+bZ4KL++TYX2hpkfvxzti3O8/dJr+XhKnrxZXRdXEURv8QqxGIwmHa7cXkbM58Qq0cud7ZlbMOGJYlkM861FjEOQORQyUNP9X/YJDyhqukYR4YuphcwKUs/XXwjU5SwJ7SvbLjPq2xb3dlE0sFeVjxc4a2qAXAadtHq/5IeaDt35RLOu566jBzYTMO1Mr3tHKyY2Me0YlhkbH1mXQV41jsTwnayPSwyCaEBMaguDXd3XsAY648du13tlxrMNf0XvGWQ+sEGAFaXpg+TiUmCQNCT+XqzZ6X+5J0Xc0umH7DuRemOUCmu5lTr8PpfJxHzdxXZ1WAM+bsvipHW0g9w3EHK4s6FeGQqJV4cfvdUJ07ou0ddmRGTTs6B3dcSnsIny4tSwkwJPRel/Djf6JqG8mGNHb6vv3HqkZkz7AtJoVuoFt2IS0QTuA7sX3D2uJCAFGQa0O7jBSEtE/3oz6avHGZLAg3+bxe1jnFMxv6T4mbJzhjo18ik0KXZWyPf8C3KKCdWm9nUyGwRosCCuMX6b9el+yKA+qR/zAe5yXUxQvCSjC/XORYfOHL8SKtjhUWAQ50WggBAy7s3G6UL4d1tYdSrkDMLKmrB+H4twKY169nKZ3mFjhjZNwTrdmK/75ozKV39xMu5EJGKuu+rIdNQ+z3ZXYwnVGAa1c5HAloploWf54XyrZFfMPm76QlWkm2dOkGo0H3Wm8C1Nfe58NDBN1pjVWdyqV3YT3BBH/rWg6eMAlqelO3F8iCpezWfj0o2nnC0kfLfiHzMNzpDs3tacsC9uf1NPGnlU5InGaJ46iQIZfDEtSXfsXyPwKfuKUtOZYj7G9/xjCXU2/RyZSK1GRkT5AApytq4xOnUHIi63CH+HX/7WGEP5wQz0PgXxs3PHDuvyHbKhR1XJXnZDgn72JExxRpFw1W6agyo5HyyxewN5VzS9jQFWp/dNZ3rS16FQHD/Nh8bmovFsMPBTVdI1QGe7cXzja5TGL3Rs91D26aGZc3G0zwLn9cXtOeqFDUGOwSh98yQnBmz2Vfyo6CX39QthRzvhKO6uz8eeliACtHpXpDX542lz7FTlAUe2sGVjCi9spAfJXQuY1oNQzSQIN2omL1im30K0Q2xjy09I2xGj5LNcVUC8aGhforVb8f8s3K8ICCuVzw5/lib6j94pSPnj7acR6Yqi0dj2Kdcj3AogUQ38Kpreuzgk+dSnYf1EllY7Sg7I409cRN9WXitRuF8YZo5sqvJUJaI22joASdzNFYzHkK4YLaCog8AEZQ7RQSmRCgUm4k4LV5XGRAYbBguLcl9fafg90Ddd68TNa6xjCY3bW8Z/GXrB7ceZnLcWDw4kTN+ufz5HSWRNp87AgVGulveL9b+zfXWFJ2GgK3P3uNsAhmB7xOi9bqTX2t/uVspazOtGCu1TLAZGw4iF17CgNxHc+DhknsHbfkV57CFzl5jSN7foHemXUAhG5h1EwhOenz4VISed9k+q0I2+M9BbvqScG3dL0Ao0F/iA4sWYmvll+T96rxYI0X9F0p7pxKSSRlTplJmYRY1ZRZO6qWGeyLqw7sjjEqHjNsT/6k3HjpGSLEhCDnlndGn/QtxhnyogK9X2T3cqlPnzC+PqkIEQD4sPoxaPOJDxFNAiE7+RSHgJHhAxdOy4t7/c0VJx/cTEKJ9JuoU7UQgE/bKTc3LP7bCRSlhwpQOSLEHSq+XT0Nf/HalTQypp42IOOCyhJuiUC70wWDLLM2nZ+khhkx12pKYk3q0Os2tj/XZ5k0P2G11qb7737nQoFeJ0Yxk1nMeMSUgL7dU9nJdRprvGi+YXsfgqL/1KxjGHf+TgUuOWAFV1Cz2iuVAvXYa9faMkgd544jq9J2a75OQQtHXe5yl7Sh3V2nsRr2ECoevUMQbjrR6oFlkjNTG1Cx1rpbueGZlscu870amHxrggvPG8XwLXXnq1sFh4so4dsMp8byit/6z1ttBBIUFD+KxUqJCSQdOZmG10Ha3GjbA0aeS/RAYCmxYsQhmbvn7z2Rp+iBrxE8Et88AbGOAeKXuJdA/7gukuuN00ZTs0A9zCpkWIGg++2u8BCt0MoBzMEtGG1mh5oR9Rb/t6kfQBYoR2p4BR8K82oSxAqpJpGEyBRFLO+b+usWuqrIH7X8mU8d6gjtPCbP399LVffvXP22tFcujEOhDxA6ubSeXU9dQRxARn5hRxlco5pVzQbVy6pM0cr3IXQ3mHLjd9BJlqk8MRWnKJCZNgWFG8TwKsElBycPeBpSG9fAIPmN7GplWKeR8rgY6Un51Qa8OL1JriTpwPJKSg6r6TsxGaTQK2RRDrKsj0vODKFVFlj90cu6RfvOJgTzSX2SwNIoezDQrgLQav6V9zhXaiVGSERw66xTiZRmZplyYsllHymM15ztBm6rrtpd4YYgcLI5BNUTcJLlXVzlPfAffnapL/WIDxtbovL5+QXImC9RbpjBQ0uIBMwAjoZxHdB3FB4Yr4iDirvWfh6E4emVXJ8xenonxTMguCQNFv7DPgk2lLcaafYWlpQiQuZNHIwD9/1gOKkHgGTNKBKI5XKyqokmz4A28/zzskqsFpdNHLJKhWi4Wp6rEEV+AD/BbsyZJvKppu/6B7DFoozi/3GpkPhXMDfqCDj5VrwoCE6rsIF4YaJpMEYOr0B02lWsenAP9FZYDplmsbZHGvmKb0KO98gHWG/JyPTwVLISq+3437Qg0Cx2vgL6p1LLpi/HLxtTMM91Ty+IdO2vrAl7UqkAGKb8/6FRji2KE1D7QWM0C23JMiSVSr+OQKdoslfLBMSmaZLRW66i9+T8iy5gdZ8DNCvYorlxATMP7Q0844dTD046EAR6MUfV7VfufycPnHmqglJ9YGQciOD4o4l8EC4ilOFS+bBF/aRY2cRAI/o21uVxVKm80UfnT0WB9QDQ+P3EMLLSOxC5EGpfkqjAlQ3flFyqInTGlaoC5vDOp98+AneWD7/5czJy4O6ztrfyEChyiZI6C5Rpk5XZL9e4cWBtNoPg9bZHNaRUToYAz7seNIdTFZbmQYO3gBor9tqDalryj9D0P9qtSt2pVVnqM97+V9dpCKcABXxO/51y3D0VPi7RCRNWEh36rGfshWkBl83Zv6gXNaitafbpcjSee1XXFTtD/VcKCvJjjj/+0WeubiDMXER9oHaoYQQqC27tgz+bBrCtx+OpBjthi9UNGMF0yfvx8u2P10IcBxhtEToNqtY1VMzPuq+sSHvkgrAO+46U6Lv6wZQcy2CtL5/a5eknJu9iOoc0bnkNMNx+ezMR6jG4IR4xLVlILXhaTouRoV2v2CykIgVtpTzny+oRZDtX9fwhEXp6/yti2M4gDMBblhwNgP7G3fvtgfX3OsQN7XURGj9soYj/HIEGPeIM9uqvNsj2GWob0AYmuurmZOaWDCPMrEFyi22XgJu8aKjGx/7AyIdlJMskP3dG3V7c/AV0zBOhgifNDAllwDzinlypCc/E4yJdkMmAtatVIbAbfH2lQeF93yR/l5mSBNYIgHUiTfRQY38psDTTjM6g7+VimW+mCRxuOsPhgH/cSHmR3sw4MMb0G4pTE72KVeH9BeVPTI3225CKExoFnoQ5lgeWBlAh2HVR1Ddz6I9pDqKJWXjLPIhB2fHGBRXR1F0nEGCGvxI/b2IgMvob26rsAEN1B+dO+eUcSZdn/4jSJ1RCY+p0iJ5xHcSFf08/i0wrPtT6fqPeoI9GGRPXvbcySX+E5WQa3oR4VKwJAUWFFPH9mIqy6jeNX9vIyeEDxMHvL8eHMreJl1K1a6vEBvxgA4mLRzj3Zgghn2ZyR5OJQpGb8ZPQwragic16JbI1wyNp9ZQLhMEn9z3A9iaHSMb+/9osoSo9zfeC9ntZjvkGPHfxoBcvGtjuy14wkXyZHIPGIvXZ/Ud//RyiPPXB7O0iPhJiZxRKSOYkN1/eNxQsR0rsWaZMEf1cuQAwvU4wZQlJuL1CzcvAzXi4gxHYnr58qXZ6SERRirOGcSaXkDcCowfZWdQpcg3epCgKQjrmqDBkxCgEreP6jmmOxncZho3N+6Uk2nPjROrb8WhQvpcK8Uv2FONRWcbvIvuqerAQgX+4haNl1bF8nlVrvMLuDT10oaCUwVE3QJG6QAt05Gxuk6EkMOIrd7YLAv7WLVUIOVdXpjsG8OY2BR5u6HZPjukZokVIVu16JiJQL+sPmE8qtU0y/OYMLs3mQGMuh/Xlm8AQWklEXmVAAIwZiqSLfA3Q3tIr+NmQXo2H6FUvJGfYjFchv5T0dASqTJjODP7V5Dhgx1LDMSq163SFCSUge7hSPz1Dpkmuri57C4s3PHm25s+AGpmGbk4vYEaWf4kEZ7cgty/Z9lET+uoq7m+mA4BLWJOeqJDQXvX5NKFikMJB14XfkfJzx0pkerQtSvtPoZvfBYoYAzP/u3mlfua3HTTsvluyLeoHf3yL0Fk4jbWY7ehjp8tqJjCcD4JvyLHTyh9wb14h4rzjLbnSqlkR/9qoPXmt09GLf+lfXtAwVXzLux+u8ODIYH77HEl9KcUxh9dbQizbLpWWZaHqaAmaQ5YYUcYneIg3i3zZKMbR7oJ73LcEQNXHYbShCdnTEZS+S/ZX29235zeAm4ts4MrA5aDk6mQNBzfPdEu5YdfCjc1eyY88/XkD/Z/nmO9rYW1Qi8/qMl9YqAHoEXrqplCGa/+LWvxOXQAXeZLsR+eyGF5nObaKTlR+FWbHoNjxyEDDG99LVFvZyLu2IBzr7LfZ6s3zp9Cy0QaE1AKew/JQArLUeyvuL9MoQ7qR+2iGgZYcf8VZMyCgEHWLcTQYo6a0ABJ6Q/dljTYQbMFdC6/lp6MPV3LfYb9odkTAer8Q0Zl3aoqxkZhBbdXg/KwIPVT8GgcLYXoW4DqwZoY5WkEoZTPkKJTjGn3BZMycJJN9LwXjAwlm1qxLaFm0h3BVLOR89t8Pu1jIuLnsBKI+9GrRfIpN72yFPK1UsVyNGy3t9Z/H/rrr/4U3d8yw3nSiRJlrZEMhJirBMo8K2V8hmZSsmA3GVIskX/RU4Elw1y9NxnMF/iy+0O32uO4jDl0QA+tZ4pROyXgA8b75vAxB6ROSlPvBh/4m0523ZNrhgmFXCVvmTubtG7jpIWnH4tMsyczyf6dxVvOnxvIxxapIVap8g9mRrrwVt9AGMZgkaGTiS2wxd1QxnRbe1R6MgxCWC5EUCXIkXttsvFXpptKRZoJybsR42lByhzrciGnRJrw5nt1em9xBGlZ2Z3CqASD0SCOcdvGBk+v1pWkjPYOxNAmylKdTlhRe27Qjoid0pDVbI9Bzi13jRKREVbT9L/eZFtT+NT/PddkOBRZhwh3H/MlGm0zkS3Mg7f9FSvO5HXONgUve+OZVdynbmzH2nCElKe2d3PKBYcSAwM3DWKYOXwPaFsPW7F3jCPa34SJufkSFooQ59LVKv9fYuppXADRqmrjF88XG2zxLOrNVdzsGTdGevY35NxxIvfsnfGjpNBy93XHHhQYN3qjjTayO/nAl2cWlvlVJpnrF0/+LVBUEjJbe+D7030/4+6HlpaQwXLpNXtqOosrkdVbGCRLNu6fxGCQhRZGoaMdInT25Y4Xb6e6xa+NasgNRdfrkbNgzeoHcgqBdVyssfErQnJRXm5nEdJ+YuN4zdCk7DfROgPtSHbI1cTj3LPL+qkIZ5SbwAFLi7yrhvc3TQ2qUkOomXBrgdLo5NaHGzyEAqG9zcjEf61aW+GTEWn10OpHq5vtzOTupMtNYucPWH2mHc2ZV7/G+iIQekcWt6dkEPWCGXu2IaX0QXHjNcMk58tEAeT3HbzVSafwbIR+1V4hpQBy84MME0zoKXEx8oUKryPBOh/hwmom8bed2qsGCwJSRc0I86KGzC8RUQPnNZg4HF50yKh6aWNlqnFEsJamJa7mDQfBSTEVtz9YETJNAeaNzbqgklvU6Nz73QFPYAUFrsfjDlYmQwW1tSJOIXObgotC9Q+RJnie/GTG+1sQZeOvf8tF2IA3NM4x64eeheIG/C3SPTlXl1lIfsQPjdrRo4yYTVwv1YzCHhBo5UeRfYL3YvCoL5CbACDKcHuJ8mjJ0uzLIC39SB2X0ZiuCyeCNszYMuNEJW0FyQvFc6a4Q6dL5lF94owbUFotHIQ4E+X0TJv/iLl/WBRsVNs5cy3skPcUh0p0KylXlAW5IG0Vjzd+fqmx+7xGjoP06+w7JdT5/5KCPkQkPdNTg+NcBq9U0mkSbVoemgjJM57AknqjP8swcmklCfxLqsNluiIKun1g+3enrNUY3PHK/ZcgV3L9QSQqzlEUWNYO+Jku7dVln1bx9XSnXqLfuPPX2HNd3uoJJqHpPkKVqC/ay4vag/0LfgDVO1HbTiRhynrSK0MxzeBfI8kMbVMVkomUsDGp9RmLLDPCIDdsRhCDCNYHw5d5O5Au43jpd6vgdvj+yiOpU+6BXxV/jhtyZwNQxhOgLTadiDdUJO3Q1kCATdnLkuzE85ES8cxWbCxTDh2fAne0wCXlGaAHskKoyrvnTxLb2wboFvA4Drd3JxGMJ8e81zThX+X7R6B233GTPHl2gEpOJDYVsU/ihxbBfmublizRprToedNX8jiYygGR96BsZYAUmL9Y0jwh6eMLVDiQOKX1PlPwx8466HmfTgga7Kd9pHKnTObz87AhQWRacoCSllxORAy+LuEbDrPE+w+RDIhZoBhuemed6CIOLoN9PE99Nj9AFbLEth5NoadpFvmq8qwdeOlcF4XM9ZJnraH0/i+sKYyTtc8HFu/up3I7ppPG0sUnHwDj2AsIWzjc98FlZnCeRsk7NxtcDOFHMhMSoLKYChLPVKAUExhMWg34I2PXOYUBHE3KpzbDmxPyl4l5EhOeKtUWLTOj4jkkftPu89mGWxEzm6mijay9RCBlkKiV8U3yZeu8RXRxHyqtTFQlTJNBwBm5ifLcQb1SfqRIYmduKSLMmu2QfpDjYUcVpUhmMhIZZAmpSMDotRYiGaxfo9leDg6VkP2buch38yQyesPZXdxTWg+beMyupA00JR9oC1uDN0j5cTPJnpJUUprnm2biobsfmCjvH5Dthy1xLvN8rUnJ1pUL26NybBp6U5193ZNKS9fWxa8yUg2vOo63PveoNd39reJKDzMFKgaUnOFZoBfAvgaZT9FhEwzPRW4+n9NWkm7Fgb1NJWMB2k105jzwjzakzCUiwwyvNlYUCMLz6sFiWb76MV/KPsWyo/lBg5bD09WqiMrgQpJtsMN5OPjUkMe3hZIKYG4++mcOcmg==&quot;,&quot;ViewName&quot;:&quot;Web&#32;Portal&#32;Language&quot;,&quot;Columns&quot;:[{&quot;WidthAsPercent&quot;:7.4074074074074066,&quot;Type&quot;:1,&quot;LogicalName&quot;:&quot;col-select&quot;,&quot;Name&quot;:&quot;&lt;span&#32;class=&#39;fa&#32;fa-check&#39;&#32;aria-hidden=&#39;true&#39;&gt;&lt;/span&gt;&#32;&lt;span&#32;class=&#39;sr-only&#39;&gt;Select&lt;/span&gt;&quot;,&quot;Metadata&quot;:null,&quot;Width&quot;:20,&quot;SortDisabled&quot;:true},{&quot;WidthAsPercent&quot;:55.555555555555557,&quot;Type&quot;:0,&quot;LogicalName&quot;:&quot;adx_name&quot;,&quot;Name&quot;:&quot;Name&quot;,&quot;Metadata&quot;:{&quot;Format&quot;:1,&quot;ImeMode&quot;:0,&quot;MaxLength&quot;:100,&quot;YomiOf&quot;:null,&quot;AttributeOf&quot;:null,&quot;AttributeType&quot;:14,&quot;ColumnNumber&quot;:33,&quot;Description&quot;:{&quot;LocalizedLabels&quot;:[{&quot;Label&quot;:&quot;The&#32;name&#32;of&#32;the&#32;custom&#32;entity.&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;cf849891-3e28-4351-a032-92c36b7bcf6c&quot;,&quot;HasChanged&quot;:null}],&quot;UserLocalizedLabel&quot;:{&quot;Label&quot;:&quot;The&#32;name&#32;of&#32;the&#32;custom&#32;entity.&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;cf849891-3e28-4351-a032-92c36b7bcf6c&quot;,&quot;HasChanged&quot;:null}},&quot;DisplayName&quot;:{&quot;LocalizedLabels&quot;:[{&quot;Label&quot;:&quot;Name&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;3ffe8dc8-d5d4-470f-a2de-489656debfac&quot;,&quot;HasChanged&quot;:null}],&quot;UserLocalizedLabel&quot;:{&quot;Label&quot;:&quot;Name&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;3ffe8dc8-d5d4-470f-a2de-489656debfac&quot;,&quot;HasChanged&quot;:null}},&quot;DeprecatedVersion&quot;:null,&quot;EntityLogicalName&quot;:&quot;adx_portallanguage&quot;,&quot;IsAuditEnabled&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyauditsettings&quot;},&quot;IsCustomAttribute&quot;:true,&quot;IsPrimaryId&quot;:false,&quot;IsPrimaryName&quot;:true,&quot;IsValidForCreate&quot;:true,&quot;IsValidForRead&quot;:true,&quot;IsValidForUpdate&quot;:true,&quot;CanBeSecuredForRead&quot;:false,&quot;CanBeSecuredForCreate&quot;:false,&quot;CanBeSecuredForUpdate&quot;:false,&quot;IsSecured&quot;:false,&quot;IsRetrievable&quot;:true,&quot;IsFilterable&quot;:false,&quot;IsSearchable&quot;:true,&quot;IsManaged&quot;:true,&quot;IsGlobalFilterEnabled&quot;:{&quot;Value&quot;:false,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyglobalfiltersettings&quot;},&quot;IsSortableEnabled&quot;:{&quot;Value&quot;:false,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyissortablesettings&quot;},&quot;LinkedAttributeId&quot;:null,&quot;LogicalName&quot;:&quot;adx_name&quot;,&quot;IsCustomizable&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;iscustomizable&quot;},&quot;IsRenameable&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;isrenameable&quot;},&quot;IsValidForAdvancedFind&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifysearchsettings&quot;},&quot;RequiredLevel&quot;:{&quot;Value&quot;:2,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyrequirementlevelsettings&quot;},&quot;CanModifyAdditionalSettings&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyadditionalsettings&quot;},&quot;SchemaName&quot;:&quot;adx_name&quot;,&quot;InheritsFrom&quot;:null,&quot;MetadataId&quot;:&quot;7c0972bb-4fb0-4e46-8f42-abe3100380e7&quot;,&quot;FormatName&quot;:{&quot;Value&quot;:&quot;Text&quot;},&quot;AttributeTypeName&quot;:{&quot;Value&quot;:&quot;StringType&quot;},&quot;IntroducedVersion&quot;:&quot;8.1.0&quot;,&quot;HasChanged&quot;:null,&quot;IsLocalizable&quot;:false,&quot;FormulaDefinition&quot;:&quot;&quot;,&quot;SourceTypeMask&quot;:0,&quot;IsLogical&quot;:false,&quot;SourceType&quot;:0},&quot;Width&quot;:150,&quot;SortDisabled&quot;:false},{&quot;WidthAsPercent&quot;:37.037037037037038,&quot;Type&quot;:0,&quot;LogicalName&quot;:&quot;createdon&quot;,&quot;Name&quot;:&quot;Created&#32;On&quot;,&quot;Metadata&quot;:{&quot;Format&quot;:1,&quot;ImeMode&quot;:1,&quot;AttributeOf&quot;:null,&quot;AttributeType&quot;:2,&quot;ColumnNumber&quot;:2,&quot;Description&quot;:{&quot;LocalizedLabels&quot;:[{&quot;Label&quot;:&quot;Date&#32;and&#32;time&#32;when&#32;the&#32;record&#32;was&#32;created.&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;8db95342-4920-eb11-a814-000d3a9a6f36&quot;,&quot;HasChanged&quot;:null}],&quot;UserLocalizedLabel&quot;:{&quot;Label&quot;:&quot;Date&#32;and&#32;time&#32;when&#32;the&#32;record&#32;was&#32;created.&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;8db95342-4920-eb11-a814-000d3a9a6f36&quot;,&quot;HasChanged&quot;:null}},&quot;DisplayName&quot;:{&quot;LocalizedLabels&quot;:[{&quot;Label&quot;:&quot;Created&#32;On&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;8eb95342-4920-eb11-a814-000d3a9a6f36&quot;,&quot;HasChanged&quot;:null}],&quot;UserLocalizedLabel&quot;:{&quot;Label&quot;:&quot;Created&#32;On&quot;,&quot;LanguageCode&quot;:1033,&quot;IsManaged&quot;:true,&quot;MetadataId&quot;:&quot;8eb95342-4920-eb11-a814-000d3a9a6f36&quot;,&quot;HasChanged&quot;:null}},&quot;DeprecatedVersion&quot;:null,&quot;EntityLogicalName&quot;:&quot;adx_portallanguage&quot;,&quot;IsAuditEnabled&quot;:{&quot;Value&quot;:false,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyauditsettings&quot;},&quot;IsCustomAttribute&quot;:false,&quot;IsPrimaryId&quot;:false,&quot;IsPrimaryName&quot;:false,&quot;IsValidForCreate&quot;:false,&quot;IsValidForRead&quot;:true,&quot;IsValidForUpdate&quot;:false,&quot;CanBeSecuredForRead&quot;:false,&quot;CanBeSecuredForCreate&quot;:false,&quot;CanBeSecuredForUpdate&quot;:false,&quot;IsSecured&quot;:false,&quot;IsRetrievable&quot;:true,&quot;IsFilterable&quot;:true,&quot;IsSearchable&quot;:false,&quot;IsManaged&quot;:true,&quot;IsGlobalFilterEnabled&quot;:{&quot;Value&quot;:false,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyglobalfiltersettings&quot;},&quot;IsSortableEnabled&quot;:{&quot;Value&quot;:false,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyissortablesettings&quot;},&quot;LinkedAttributeId&quot;:null,&quot;LogicalName&quot;:&quot;createdon&quot;,&quot;IsCustomizable&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;iscustomizable&quot;},&quot;IsRenameable&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;isrenameable&quot;},&quot;IsValidForAdvancedFind&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifysearchsettings&quot;},&quot;RequiredLevel&quot;:{&quot;Value&quot;:0,&quot;CanBeChanged&quot;:true,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyrequirementlevelsettings&quot;},&quot;CanModifyAdditionalSettings&quot;:{&quot;Value&quot;:true,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifyadditionalsettings&quot;},&quot;SchemaName&quot;:&quot;CreatedOn&quot;,&quot;InheritsFrom&quot;:null,&quot;MetadataId&quot;:&quot;61ed25c3-6370-4011-9a12-aa52285784a4&quot;,&quot;AttributeTypeName&quot;:{&quot;Value&quot;:&quot;DateTimeType&quot;},&quot;IntroducedVersion&quot;:&quot;8.1.0&quot;,&quot;HasChanged&quot;:null,&quot;SourceTypeMask&quot;:0,&quot;FormulaDefinition&quot;:&quot;&quot;,&quot;IsLogical&quot;:false,&quot;SourceType&quot;:0,&quot;DateTimeBehavior&quot;:{&quot;Value&quot;:&quot;UserLocal&quot;},&quot;CanChangeDateTimeBehavior&quot;:{&quot;Value&quot;:false,&quot;CanBeChanged&quot;:false,&quot;ManagedPropertyLogicalName&quot;:&quot;canmodifybehavior&quot;}},&quot;Width&quot;:100,&quot;SortDisabled&quot;:false}],&quot;ColumnsTotalWidth&quot;:270,&quot;SortExpression&quot;:&quot;adx_name&#32;ASC&quot;,&quot;Id&quot;:&quot;1327acc1-258a-e611-80d6-00155d88dbcb&quot;}]"><div class="view-grid"></div><div aria-label="There&#32;are&#32;no&#32;records&#32;to&#32;display." class="view-empty&#32;message" role="alert" tabindex="0"><div class="alert&#32;alert-block&#32;alert-warning">There are no records to display.</div></div><div class="view-access-denied&#32;message" role="presentation" tabindex="0"><div class="alert&#32;alert-block&#32;alert-danger">You don't have permissions to view these records.</div></div><div class="view-error&#32;message" role="presentation" tabindex="0"><div class="alert&#32;alert-block&#32;alert-danger">Error completing request. <span class='details'></span><span class='details'></span></div></div><div class="view-loading&#32;message&#32;text-center" role="presentation" tabindex="0"><span class='fa fa-spinner fa-spin' aria-hidden='true'></span> Loading...</div><div class="view-pagination" data-current-page="1" data-pages="1" data-pagesize=""></div><section aria-hidden="true" aria-label="&lt;span&#32;class=&#39;fa&#32;fa-exclamation-triangle&#39;&#32;aria-hidden=&#39;true&#39;&gt;&lt;/span&gt;&#32;Error" class="modal&#32;fade&#32;modal-error" data-backdrop="static" role="dialog" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-label="Close" class="form-close" data-dismiss="modal" tabindex="0" title="Close" type="button"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h1 class="modal-title" title="&lt;span&#32;class=&#39;fa&#32;fa-exclamation-triangle&#39;&#32;aria-hidden=&#39;true&#39;&gt;&lt;/span&gt;&#32;Error"><span class='fa fa-exclamation-triangle' aria-hidden='true'></span> Error</h1></div><div class="modal-body"><p>We're sorry, an error has occurred.</p></div><div class="modal-footer"><button aria-label="Close" class="cancel&#32;btn&#32;btn-default" data-dismiss="modal" tabindex="0" title="Close" type="button">Close</button></div></div></div></section></div></div><div class="modal-footer"><button aria-label="Select" class="primary&#32;btn&#32;btn-primary" tabindex="0" title="Select" type="button">Select</button><button aria-label="Cancel" class="cancel&#32;btn&#32;btn-default" data-dismiss="modal" tabindex="0" title="Cancel" type="button">Cancel</button><button class="btn&#32;btn-default&#32;pull-right&#32;remove-value" title="Remove&#32;value" type="button">Remove value</button></div></div></div></section></div></div></div></td>
+		<td class="cell&#32;zero-cell"></td>
+	</tr>
+	</table></fieldset></div></div></div>
+			
+</div>
+	</fieldset>
+		
+	<div id="ContentContainer_MainContent_MainContent_ContentBottom_MarketingOptionsPanel">
+	
+		<fieldset>
+			<legend>
+				<span class="xrm-attribute&#32;xrm-editable-text"><span class="xrm-attribute-value">How may we contact you? Select all that apply</span></span>
+			</legend>
+			<div class="form-horizontal">
+				<div class="form-group">
+					<div class="col-sm-12">
+						<div class="checkbox">
+							<label>
+								<span title="Email"><input id="ContentContainer_MainContent_MainContent_ContentBottom_marketEmail" type="checkbox" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$marketEmail" checked="checked" /></span>
+								<span class="xrm-attribute&#32;xrm-editable-text" aria-hidden="true"><span class="xrm-attribute-value">Email</span></span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<span title="Fax"><input id="ContentContainer_MainContent_MainContent_ContentBottom_marketFax" type="checkbox" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$marketFax" checked="checked" /></span>
+								<span class="xrm-attribute&#32;xrm-editable-text" aria-hidden="true"><span class="xrm-attribute-value">Fax</span></span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<span title="Phone"><input id="ContentContainer_MainContent_MainContent_ContentBottom_marketPhone" type="checkbox" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$marketPhone" checked="checked" /></span>
+								<span class="xrm-attribute&#32;xrm-editable-text" aria-hidden="true"><span class="xrm-attribute-value">Phone</span></span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<span title="Mail"><input id="ContentContainer_MainContent_MainContent_ContentBottom_marketMail" type="checkbox" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$marketMail" checked="checked" /></span>
+								<span class="xrm-attribute&#32;xrm-editable-text" aria-hidden="true"><span class="xrm-attribute-value">Mail</span></span>
+							</label>
+					</div>
+				</div>
+			</div>
+                </div>
+		</fieldset>
+	
+</div>
+
+	
+	
+	<div>
+		<div class="actions">
+			<input type="button" name="ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$SubmitButton" value="Update" onclick="javascript:WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$ctl00$ctl00$ContentContainer$MainContent$MainContent$ContentBottom$SubmitButton&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;Profile&quot;,&#32;&quot;&quot;,&#32;false,&#32;true))" id="ContentContainer_MainContent_MainContent_ContentBottom_SubmitButton" title="Update" class="btn&#32;btn-primary" />
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			if ($('.alert.alert-success.alert-block')) {
+				var successDiv = $('.alert.alert-success.alert-block');
+				if (successDiv.find('div.xrm-attribute-value')) {
+					var ariaLabel = successDiv.find('div.xrm-attribute-value').text();
+					successDiv.attr("aria-label", ariaLabel);
+					successDiv.attr("tabindex", '0');
+					successDiv.focus();
+				}
+			}
+
+			(function(panelId) {
+				$("#" + panelId + " input[type=checkbox]")
+					.each(function(idx, el) {
+						var $el = $(el);
+						var val=$("span.xrm-attribute-value",$el.parentsUntil("div.checkbox")).html();
+						$el.attr({ "title": val, "aria-label": val });
+						$el.parent().removeAttr("title");
+					});
+			})("ContentContainer_MainContent_MainContent_ContentBottom_MarketingOptionsPanel");
+
+		    $("#ContentContainer_MainContent_MainContent_ContentBottom_SubmitButton").on('keypress click', function () {
+		        if ($("#firstname").length != 0) { $("#firstname").val($("#firstname").val().trim()); }
+		        if ($("#middlename").length != 0) { $("#middlename").val($("#middlename").val().trim()); }
+		        if ($("#lastname").length != 0) { $("#lastname").val($("#lastname").val().trim()); }
+		        if ($("#telephone1").length != 0) { $("#telephone1").val($("#telephone1").val().trim()); }
+		        if ($("#jobtitle").length != 0) { $("#jobtitle").val($("#jobtitle").val().trim()); }
+		        if ($("#nickname").length != 0) { $("#nickname").val($("#nickname").val().trim()); }
+		        if ($("#adx_organizationname").length != 0) { $("#adx_organizationname").val($("#adx_organizationname").val().trim()); }
+		        if ($("#adx_publicprofilecopy").length != 0) { $("#adx_publicprofilecopy").val($("#adx_publicprofilecopy").val().trim()); }
+	       
+				if ($("#ValidationSummaryProfileFormView").length > 0) {
+					$("#ValidationSummaryProfileFormView").focus();
+				};
+		    })
+
+			$("legend > span.xrm-attribute > span.xrm-attribute-value").eq(1).attr('tabindex', 0);
+		});
+
+		$(function () {
+			$("span.xrm-attribute-value", $("div.form-group", $("#ContentContainer_MainContent_MainContent_ContentBottom_MarketingOptionsPanel"))).on('DOMSubtreeModified', function () {
+				var changeText = $(this).html();
+				$("input[type=checkbox]", $(this).parentsUntil("div.checkbox")).attr({
+					"aria-label": changeText,
+					"title": changeText
+				});
+			});
+		});
+	</script>
+
+			
+		</div>
+	</div>
+
+			
+		</div>
+	
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ValidationSummaryProfileFormView"));
+var Page_Validators =  new Array(document.getElementById("RequiredFieldValidatorfirstname"), document.getElementById("MaximumLengthValidatorfirstname"), document.getElementById("RequiredFieldValidatorlastname"), document.getElementById("MaximumLengthValidatorlastname"), document.getElementById("EmailFormatValidatoremailaddress1"), document.getElementById("MaximumLengthValidatoremailaddress1"), document.getElementById("MaximumLengthValidatortelephone1"), document.getElementById("MaximumLengthValidatoradx_organizationname"), document.getElementById("MaximumLengthValidatorjobtitle"), document.getElementById("MaximumLengthValidatornickname"), document.getElementById("MaximumLengthValidatorwebsiteurl"), document.getElementById("MaximumLengthValidatoradx_publicprofilecopy"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var adx_publicprofilecopy = document.all ? document.all["adx_publicprofilecopy"] : document.getElementById("adx_publicprofilecopy");
+adx_publicprofilecopy.exMaxLen = "64000";
+var ValidationSummaryProfileFormView = document.all ? document.all["ValidationSummaryProfileFormView"] : document.getElementById("ValidationSummaryProfileFormView");
+ValidationSummaryProfileFormView.headertext = "<h4 class=\'validation-header\'><span role=\'presentation\' class=\'fa fa-info-circle\'></span> The form could not be submitted for the following reasons:</h4>";
+ValidationSummaryProfileFormView.validationGroup = "Profile";
+var RequiredFieldValidatorfirstname = document.all ? document.all["RequiredFieldValidatorfirstname"] : document.getElementById("RequiredFieldValidatorfirstname");
+RequiredFieldValidatorfirstname.controltovalidate = "firstname";
+RequiredFieldValidatorfirstname.errormessage = "<a href=\'#firstname_label\' onclick=\'javascript:scrollToAndFocus(\"firstname_label\",\"firstname\");return false;\'>First Name is a required field. </a>";
+RequiredFieldValidatorfirstname.display = "Dynamic";
+RequiredFieldValidatorfirstname.validationGroup = "Profile";
+RequiredFieldValidatorfirstname.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidatorfirstname.initialvalue = "";
+var MaximumLengthValidatorfirstname = document.all ? document.all["MaximumLengthValidatorfirstname"] : document.getElementById("MaximumLengthValidatorfirstname");
+MaximumLengthValidatorfirstname.controltovalidate = "firstname";
+MaximumLengthValidatorfirstname.errormessage = "<a href=\'#firstname_label\' onclick=\'javascript:scrollToAndFocus(\"firstname_label\",\"firstname\");return false;\'>First Name exceeds the maximum length of 50 characters. </a>";
+MaximumLengthValidatorfirstname.validationGroup = "Profile";
+MaximumLengthValidatorfirstname.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var RequiredFieldValidatorlastname = document.all ? document.all["RequiredFieldValidatorlastname"] : document.getElementById("RequiredFieldValidatorlastname");
+RequiredFieldValidatorlastname.controltovalidate = "lastname";
+RequiredFieldValidatorlastname.errormessage = "<a href=\'#lastname_label\' onclick=\'javascript:scrollToAndFocus(\"lastname_label\",\"lastname\");return false;\'>Last Name is a required field. </a>";
+RequiredFieldValidatorlastname.display = "Dynamic";
+RequiredFieldValidatorlastname.validationGroup = "Profile";
+RequiredFieldValidatorlastname.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidatorlastname.initialvalue = "";
+var MaximumLengthValidatorlastname = document.all ? document.all["MaximumLengthValidatorlastname"] : document.getElementById("MaximumLengthValidatorlastname");
+MaximumLengthValidatorlastname.controltovalidate = "lastname";
+MaximumLengthValidatorlastname.errormessage = "<a href=\'#lastname_label\' onclick=\'javascript:scrollToAndFocus(\"lastname_label\",\"lastname\");return false;\'>Last Name exceeds the maximum length of 50 characters. </a>";
+MaximumLengthValidatorlastname.validationGroup = "Profile";
+MaximumLengthValidatorlastname.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var EmailFormatValidatoremailaddress1 = document.all ? document.all["EmailFormatValidatoremailaddress1"] : document.getElementById("EmailFormatValidatoremailaddress1");
+EmailFormatValidatoremailaddress1.controltovalidate = "emailaddress1";
+EmailFormatValidatoremailaddress1.errormessage = "<a href=\'#emailaddress1_label\' onclick=\'javascript:scrollToAndFocus(\"emailaddress1_label\",\"emailaddress1\");return false;\'>E-mail must be a valid email address. </a>";
+EmailFormatValidatoremailaddress1.validationGroup = "Profile";
+EmailFormatValidatoremailaddress1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatoremailaddress1 = document.all ? document.all["MaximumLengthValidatoremailaddress1"] : document.getElementById("MaximumLengthValidatoremailaddress1");
+MaximumLengthValidatoremailaddress1.controltovalidate = "emailaddress1";
+MaximumLengthValidatoremailaddress1.errormessage = "<a href=\'#emailaddress1_label\' onclick=\'javascript:scrollToAndFocus(\"emailaddress1_label\",\"emailaddress1\");return false;\'>E-mail exceeds the maximum length of 100 characters. </a>";
+MaximumLengthValidatoremailaddress1.validationGroup = "Profile";
+MaximumLengthValidatoremailaddress1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatortelephone1 = document.all ? document.all["MaximumLengthValidatortelephone1"] : document.getElementById("MaximumLengthValidatortelephone1");
+MaximumLengthValidatortelephone1.controltovalidate = "telephone1";
+MaximumLengthValidatortelephone1.errormessage = "<a href=\'#telephone1_label\' onclick=\'javascript:scrollToAndFocus(\"telephone1_label\",\"telephone1\");return false;\'>Business Phone exceeds the maximum length of 50 characters. </a>";
+MaximumLengthValidatortelephone1.validationGroup = "Profile";
+MaximumLengthValidatortelephone1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatoradx_organizationname = document.all ? document.all["MaximumLengthValidatoradx_organizationname"] : document.getElementById("MaximumLengthValidatoradx_organizationname");
+MaximumLengthValidatoradx_organizationname.controltovalidate = "adx_organizationname";
+MaximumLengthValidatoradx_organizationname.errormessage = "<a href=\'#adx_organizationname_label\' onclick=\'javascript:scrollToAndFocus(\"adx_organizationname_label\",\"adx_organizationname\");return false;\'>Organization Name exceeds the maximum length of 250 characters. </a>";
+MaximumLengthValidatoradx_organizationname.validationGroup = "Profile";
+MaximumLengthValidatoradx_organizationname.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatorjobtitle = document.all ? document.all["MaximumLengthValidatorjobtitle"] : document.getElementById("MaximumLengthValidatorjobtitle");
+MaximumLengthValidatorjobtitle.controltovalidate = "jobtitle";
+MaximumLengthValidatorjobtitle.errormessage = "<a href=\'#jobtitle_label\' onclick=\'javascript:scrollToAndFocus(\"jobtitle_label\",\"jobtitle\");return false;\'>Title exceeds the maximum length of 100 characters. </a>";
+MaximumLengthValidatorjobtitle.validationGroup = "Profile";
+MaximumLengthValidatorjobtitle.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatornickname = document.all ? document.all["MaximumLengthValidatornickname"] : document.getElementById("MaximumLengthValidatornickname");
+MaximumLengthValidatornickname.controltovalidate = "nickname";
+MaximumLengthValidatornickname.errormessage = "<a href=\'#nickname_label\' onclick=\'javascript:scrollToAndFocus(\"nickname_label\",\"nickname\");return false;\'>Nickname exceeds the maximum length of 100 characters. </a>";
+MaximumLengthValidatornickname.validationGroup = "Profile";
+MaximumLengthValidatornickname.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatorwebsiteurl = document.all ? document.all["MaximumLengthValidatorwebsiteurl"] : document.getElementById("MaximumLengthValidatorwebsiteurl");
+MaximumLengthValidatorwebsiteurl.controltovalidate = "websiteurl";
+MaximumLengthValidatorwebsiteurl.errormessage = "<a href=\'#websiteurl_label\' onclick=\'javascript:scrollToAndFocus(\"websiteurl_label\",\"websiteurl\");return false;\'>Web Site exceeds the maximum length of 200 characters. </a>";
+MaximumLengthValidatorwebsiteurl.validationGroup = "Profile";
+MaximumLengthValidatorwebsiteurl.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatoradx_publicprofilecopy = document.all ? document.all["MaximumLengthValidatoradx_publicprofilecopy"] : document.getElementById("MaximumLengthValidatoradx_publicprofilecopy");
+MaximumLengthValidatoradx_publicprofilecopy.controltovalidate = "adx_publicprofilecopy";
+MaximumLengthValidatoradx_publicprofilecopy.errormessage = "<a href=\'#adx_publicprofilecopy_label\' onclick=\'javascript:scrollToAndFocus(\"adx_publicprofilecopy_label\",\"adx_publicprofilecopy\");return false;\'>Public Profile Copy exceeds the maximum length of 64000 characters. </a>";
+MaximumLengthValidatoradx_publicprofilecopy.validationGroup = "Profile";
+MaximumLengthValidatoradx_publicprofilecopy.evaluationfunction = "CustomValidatorEvaluateIsValid";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ValidationSummaryProfileFormView');
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('RequiredFieldValidatorfirstname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatorfirstname'));
+}
+
+document.getElementById('MaximumLengthValidatorfirstname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatorfirstname'));
+}
+
+document.getElementById('RequiredFieldValidatorlastname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatorlastname'));
+}
+
+document.getElementById('MaximumLengthValidatorlastname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatorlastname'));
+}
+
+document.getElementById('EmailFormatValidatoremailaddress1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('EmailFormatValidatoremailaddress1'));
+}
+
+document.getElementById('MaximumLengthValidatoremailaddress1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoremailaddress1'));
+}
+
+document.getElementById('MaximumLengthValidatortelephone1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatortelephone1'));
+}
+
+document.getElementById('MaximumLengthValidatoradx_organizationname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoradx_organizationname'));
+}
+
+document.getElementById('MaximumLengthValidatorjobtitle').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatorjobtitle'));
+}
+
+document.getElementById('MaximumLengthValidatornickname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatornickname'));
+}
+
+document.getElementById('MaximumLengthValidatorwebsiteurl').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatorwebsiteurl'));
+}
+
+document.getElementById('MaximumLengthValidatoradx_publicprofilecopy').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoradx_publicprofilecopy'));
+}
+//]]>
+</script>
+</form>
+
+
+		
+			<footer role="contentinfo" class="footer">
+  <div class="footer-bottom hidden-print">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12 text-left">
+          <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><p><span>Copyright © </span>2020<span>. All rights reserved.</span></p></div></div>
+        </div>
+
+      </div>
+    </div>
+</footer>
+		
+		
+		
+		
+		
+		
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/postpreform.bundle-b8163eb99b.js"></script>
+
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/app.bundle-5e8125268a.js"></script>
+
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.bundle-eda4e638fd.js"></script>
+
+		
+	
+	<script type="text/javascript">
+		function ConfirmEmail() {
+			$('#ConfirmEmailLoader').show();
+			$('#ConfirmEmail').remove();
+			shell.ajaxSafePost({
+				type: 'POST',
+				url: "/Account/Manage/PostConfirmEmailRequest",
+				global: false,
+				success: function () {
+					window.location.href = "/Account/Manage/ConfirmEmailRequest";
+				}
+			}).fail(function (jqXhr) {
+				var contentType = jqXhr.getResponseHeader("content-type");
+				var error = contentType.indexOf("json") > -1 ? $.parseJSON(jqXhr.responseText) : { Message: jqXhr.status, InnerError: { Message: jqXhr.statusText } };
+				displayErrorAlert(error);
+			}).always(function () {
+				$('#ConfirmEmailLoader').hide();
+			});
+			return false;
+		}
+		function displayErrorAlert(error) {
+			if (typeof error !== typeof undefined && error !== false && error != null) {
+				var message;
+				if (typeof error.InnerError !== typeof undefined && error.InnerError !== false && error.InnerError != null) {
+					message = error.InnerError.Message;
+				} else {
+					message = error.Message;
+				}
+				var $alert = $('<div id="ConfirmEmail" class="alert alert-danger alert-block"><a class="close" data-dismiss="alert" role="button" data-toggle="tooltip" href="#" title="Close" aria-label="Close">×</a><span id="ConfirmEmailMessage">' + message + '</span></div>');
+				$('#ConfirmEmailLoader').before($alert);
+			}
+		}
+	</script>
+	
+
+
+		
+		
+		<script>
+			//this event will update the title of the page based on active breadcrumb
+			$('.breadcrumb').ready(function () {
+				if ($('.breadcrumb').is(':visible')) {
+					document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "&nbsp;· Starter Portal");
+				}
+			});
+
+			function GoToNewEditor() {
+				var editCmsUrlSegment = "EditInCms";
+					var currentUrl = window.location.href;
+					if (currentUrl.indexOf('?') > -1) {
+						var urlSegments = currentUrl.split("?");
+						window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+					}
+					else {
+						window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+					}
+			}
+		</script>
+		
+			<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+</script><div id="myForm" class="chat-popup">
+
+</div>
+<p></p>
+		
+	</body>
+</html>
+<!-- Generated at 11/20/2020 3:56:45 PM -->
+<!-- Page OK -->
