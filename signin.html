@@ -1,0 +1,500 @@
+
+ 
+
+<!DOCTYPE html>
+<html lang="en-US" data-lang="en-US" crm-lang="en-US" crm-lcid="1033">
+	<head>
+			<meta charset="utf-8" /><meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<script type="text/javascript">
+				
+			</script>
+		<title>
+	Home&nbsp;· Starter Portal
+</title>
+			
+			<script src="/_resources/getresourcemanager?lang=en-US"></script>
+		
+		<script type="text/javascript">
+			// Refresh all powerBI Iframes on Login in one Iframe
+			window.addEventListener('message', function (event) {
+				if (event && event.data && event.data == 'refreshPowerBI') {
+					$("iframe.powerbi").each(function () {
+						this.src = this.src;
+					});
+				}
+			});
+
+			// Fix for incorrect viewport width setting in IE 10 on Windows Phone 8.
+			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+				var msViewportStyle = document.createElement("style");
+				msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+			}
+		</script>
+		
+			
+			<link href="/bootstrap.min.css" rel="stylesheet" />
+
+			<link href="/css/glyphicons-font-awesome-migrate.min.css" rel="stylesheet"/>
+
+			<link href="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-637cc9dada.css" rel="stylesheet" />
+
+
+			
+			<!--[if lt IE 9]>
+				<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+			
+			<!--[if lt IE 10]>
+				<script src="~/js/formdata.js"></script>
+			<![endif]-->
+			
+				
+			
+	
+		<link rel="stylesheet" href="/Areas/Account/css/account.css">
+	
+
+			<link href="/theme.css" rel="stylesheet" />
+<link href="/portalbasictheme.css" rel="stylesheet" />
+
+			
+			
+			
+			
+		
+			</head>
+	<body data-sitemap-state="/"
+		data-dateformat="M/d/yyyy"
+		data-timeformat="h:mm tt"
+		data-datetimeformat="M/d/yyyy h:mm tt"
+		data-app-path="/"
+		data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
+		data-case-deflection-url="/_services/search/f46b70cc-580b-4f1a-87c3-41deb48eb90d">
+	
+		
+			<script type="text/javascript">
+				window["Microsoft"] = window["Microsoft"] || {};
+				window["Microsoft"].Dynamic365 = {
+					Portal: {
+						User: {
+							contactId: '',
+							userName: ''
+						},
+						version : '9.2.6.67',
+						type: 'CDSStarterPortal',
+						id: 'c9a5783e-8dfb-4d81-a171-1a4b94ae0d83'
+					}
+				}
+			</script>
+
+		
+			
+
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+
+            <!--div class="visible-xs-block">
+              <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><a href="~/"><img src="/Logo.png" alt="Contoso Limited" style="width: 32px; height: 32px;"><span style="position: relative; top: 2px; margin-left: 9px;">InPath Hackathon</span></a></div></div>
+            </div-->
+            <div class="visible-sm-block visible-md-block visible-lg-block visible-xs-block navbar-brand">
+                <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><a href="~/"><img src="/Logo.png" alt="Contoso Limited" style="width: 32px; height: 32px;"><span style="position: relative; top: 2px; margin-left: 9px;">InPath Hackathon</span></a></div></div>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" title="Toggle navigation" data-toggle="collapse" data-target="#navbar" aria-expanded="false" onclick="setHeight();">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            
+            
+            <div class="navbar-right menu-bar " data-weblinks-maxdepth="2">
+                <ul class="nav navbar-nav weblinks" role="menubar">
+                    
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="Home" href="/" title="Home" >
+                            Home
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="About us" href="/about-us/" title="About us" >
+                            About us
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="Available Courses" href="/AvailableCourse/" title="Available Courses" >
+                            Available Courses
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink  dropdown">
+                        <a role="menuitem" aria-label="MyProfile" href="#" class="dropdown-toggle" data-toggle="dropdown" title="MyProfile" >
+                            MyProfile
+                            <span class="caret"></span>
+                        </a>
+                        
+                        <ul class="dropdown-menu" role="menu">
+                            
+                            <li role="none">
+                                <a role="menuitem" aria-label="MyProfile" href="/my-page-profile/"   title="MyProfile" >MyProfile</a>
+                            </li>
+                            <div class="divider"></div>
+                            
+                            
+                            <li role="none">
+                                <a role="menuitem" aria-label="History" href="/my-page-profile/history/"   title="History" >
+                                    History
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    
+                    
+                    <li role="none" class="weblink ">
+                        <a role="menuitem" aria-label="Students" href="/Students/" title="Students" >
+                            Students
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    <li role="none" class="dropdown">
+                        <a id="search" class="navbar-icon" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Search">
+                            <span class="glyphicon glyphicon-search"></a>
+                        </a>
+                        <div class="dropdown-menu dropdown-search">
+                            
+
+
+
+
+
+<form method="GET" action="/search/" role="search" class="form-search">
+    <div class="input-group">
+
+        
+
+        <label for="q" class="sr-only">
+            Search
+        </label>
+        <input type="text" class="form-control" id="q" name="q"
+               placeholder="Search"
+               value=""
+               title="Search">
+        <div class="input-group-btn">
+            <button type="submit" class="btn btn-primary"
+                    title="Search"
+                    aria-label="Search">
+                <span class="fa fa-search" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+                        </div>
+                    </li>
+                    
+                    <li class="divider-vertical" aria-hidden="true"></li>
+                    
+                    
+                    <li role="none">
+                        <a role="menuitem" aria-label="Sign in" href="/SignIn?returnUrl=%2FStudents%2F">
+                            Sign in
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    if (window.navigator.appName == "Microsoft Internet Explorer" || window.navigator.userAgent.indexOf("Trident") > 0) {
+      var searchElement = document.getElementById("search");
+      if (searchElement != null) searchElement.setAttribute("href", "");
+    }
+  };
+  function setHeight() {
+    var windowHeight = window.innerHeight - 140;
+    var navbar = document.getElementById("navbar");
+    if (navbar) {
+      navbar.style.maxHeight = windowHeight + "px";
+    }
+  }
+  window.addEventListener('resize', function(event) {
+    setHeight();
+  });
+</script>
+
+		<!-- add anti-forgery token-->
+		<div id="antiforgerytoken" data-url="/_layout/tokenhtml"></div>
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-64fa3497fa.js"></script>
+
+		
+		
+			
+			<div id="content-container" class="container">
+				<div id="content">
+					
+	
+	
+	<ul class="nav nav-tabs nav-account" role="tablist" onkeydown="navigation(event)">
+		<li class="active"><a role="tab" aria-selected="True" href="javascript:void(0)" aria-label="Sign in" title="Sign in"><span class="fa fa-sign-in" aria-hidden="true"></span> Sign in</a></li>
+		
+			<li class="">
+				<a role="tab" aria-selected="False" href="/Account/Login/Register?returnUrl=%2FStudents%2F" aria-label="Register" title="Register">Register</a>
+			</li>
+		
+		<li class=""><a role="tab" aria-selected="False" href="/Register?returnUrl=%2FStudents%2F" aria-label="Redeem invitation" title="Redeem invitation">Redeem invitation</a></li>
+		
+	</ul> 
+
+<script type="text/javascript">
+
+	const keyCodes = {
+		END: 35,
+		HOME: 36,
+		LEFT: 37,
+		RIGHT: 39
+	};
+
+	$(document).ready(function () {
+		//make the tabindex='0' for active tab and -1 for others
+		$(".nav.nav-tabs.nav-account > li > a").attr("tabindex", "-1");
+		$(".nav.nav-tabs.nav-account > li.active > a").attr("tabindex", "0");
+		$(".nav.nav-tabs.nav-account > li.active > a").focus();
+	});
+
+	function navigation(e)
+	{
+		//change tabindex dynamically for all the tabs on key press of left-right navigation keys or home/end keys
+		var tabs = $(".nav.nav-tabs.nav-account > li > a");
+		if (e.keyCode === keyCodes.END || e.keyCode === keyCodes.HOME || e.keyCode === keyCodes.LEFT || e.keyCode === keyCodes.RIGHT) {
+			var currentTab = $(document.activeElement);
+			for (index = 0; index < tabs.length; index++) {
+				if ($(tabs[index]).text() === currentTab.text()) {
+					e.keyCode === keyCodes.LEFT || e.keyCode === keyCodes.END ? (index == 0 || e.keyCode === keyCodes.END ? $(tabs[tabs.length - 1]).focus() :
+					$(tabs[index - 1]).focus()) : (index == (tabs.length - 1) || e.keyCode === keyCodes.HOME ? $(tabs[0]).focus() : $(tabs[index + 1]).focus());
+				}
+			}
+		}
+	}
+</script>
+
+	<div class="page-content">
+		
+	<div class="xrm-editable-html&#32;xrm-attribute&#32;no-value&#32;page-copy"><div class="xrm-attribute-value"></div></div>
+
+		
+	
+	<div class="row">
+		
+			<div class="col-md-6">
+				<form action="/SignIn?ReturnUrl=%2FStudents%2F" method="post"><input name="__RequestVerificationToken" type="hidden" value="k3jZHu9Xml0uGfDFvDnvOZx4v9B1lRmzXzMtgjfvo4v0Bnxs14H3TPEXyNrcWBU65b4mNLf_NV2ZFKQZxhOmSmMKlekhMVXoupq9KOg2RmU1" />
+	<div class="form-horizontal">
+		<fieldset aria-labelledby="local-login-heading" >
+			<h4 class="login-heading-section" id="local-login-heading" >
+				<span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Local SignIn</span></span>
+			</h4>
+		<div aria-describedby="loginValidationSummary" aria-label="Sign&#32;in&#32;failed." class="validation-summary-valid&#32;alert&#32;alert-block&#32;alert-danger" data-valmsg-summary="true" id="loginValidationSummary" tabindex="0"><ul><li style="display:none"></li>
+</ul></div>
+			
+				<div class="form-group">
+					<label class="col-sm-4 control-label required" for="Username"><span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">User name</span></span></label>
+					<div class="col-sm-8">
+						<input aria-label="Username&#32;is&#32;a&#32;required&#32;field." class="form-control" id="Username" name="Username" title="Username&#32;is&#32;a&#32;required&#32;field." type="text" value="" />
+					</div>
+				</div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label required" for="Password"><span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Password</span></span></label>
+				<div class="col-sm-8">
+					<input aria-label="Password&#32;is&#32;a&#32;required&#32;field." autocomplete="off" class="form-control" id="Password" name="Password" title="Password&#32;is&#32;a&#32;required&#32;field." type="password" />
+				</div>
+			</div>
+			
+				<div class="form-group">
+					<div class="col-sm-offset-4 col-sm-8">
+						<div class="checkbox">
+							<label>
+								<input data-val="true" data-val-required="The&#32;RememberMe&#32;field&#32;is&#32;required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+								<span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">Remember Me</span></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-8">
+					<button id="submit-signin-local" class="btn btn-primary" title="Sign in">Sign in</button>
+					
+						<a class="btn btn-default" role="button" href="/Account/Login/ForgotPassword" title="Forgot your password?">Forgot your password?</a>
+					
+				</div>
+			</div>
+		</fieldset>
+	</div>
+</form>
+<script type="text/javascript">
+	$(function() {
+		$("#submit-signin-local").click(function () {
+			$.blockUI({ message: null, overlayCSS: { opacity: .3 } });
+		});
+	});
+	$(document).ready(function () {
+		if (portal) {
+			portal.SetValidationSummary("loginValidationSummary");
+		}
+	});
+</script>
+
+			</div>
+		
+			<div class="col-md-6">
+				<form action="/Account/Login/ExternalLogin?ReturnUrl=%2FStudents%2F" method="post"><input name="__RequestVerificationToken" type="hidden" value="NXCiWN-J3MfPO62wNPXuDtuN_6qWU4X0fkbpr45ufIsKys3Lc0qD3XRYpJYnVTOn9MuPyKWzDUa5xi_Jj6EuHALMeNpXDQInxLwkR9M2f801" />
+<div class="form-horizontal">
+	<fieldset aria-labelledby="external-login-heading">
+		<h4 class="login-heading-section" id="external-login-heading">
+			<span class="xrm-editable-text&#32;xrm-attribute" data-languageContext="English"><span class="xrm-attribute-value-encoded&#32;xrm-attribute-value">External SignIn</span></span>
+		</h4>
+		
+		
+			<button
+				name="provider" type="submit" class="btn btn-primary btn-line"
+				id="https://login.windows.net/0b9d902d-e3c1-48f1-8979-365832b339dd/"
+				title="Sign in with your Azure AD account."
+				value="https://login.windows.net/0b9d902d-e3c1-48f1-8979-365832b339dd/">Azure AD
+			</button>
+		
+	</fieldset>
+	
+</div>
+</form>
+			</div>
+		
+	</div>
+	<script type="text/javascript">
+				$(document).ready(function () {
+					document.querySelector('title').innerHTML = ($('.nav-tabs > li.active').text() + "&nbsp;· Starter Portal");
+					shell.refreshToken();
+					if ($('#loginValidationSummary').length) {
+						if($('#loginValidationSummary').find('li').length>0)
+						{
+							$('#loginValidationSummary').attr("role", "alert");
+							$('#loginValidationSummary').attr("aria-live", "assertive");
+							$('#loginValidationSummary').focus();
+						}
+					}
+				});
+</script>
+
+	</div>
+
+				</div>
+			</div>
+		
+
+		
+			<footer role="contentinfo" class="footer">
+  <div class="footer-bottom hidden-print">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12 text-left">
+          <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><p><span>Copyright © </span>2020<span>. All rights reserved.</span></p></div></div>
+        </div>
+
+      </div>
+    </div>
+</footer>
+		
+		
+		
+		
+		
+		
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/postpreform.bundle-b8163eb99b.js"></script>
+
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/app.bundle-5e8125268a.js"></script>
+
+		<script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.bundle-eda4e638fd.js"></script>
+
+		
+		
+		
+		<script>
+			//this event will update the title of the page based on active breadcrumb
+			$('.breadcrumb').ready(function () {
+				if ($('.breadcrumb').is(':visible')) {
+					document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "&nbsp;· Starter Portal");
+				}
+			});
+
+			function GoToNewEditor() {
+				var editCmsUrlSegment = "EditInCms";
+					var currentUrl = window.location.href;
+					if (currentUrl.indexOf('?') > -1) {
+						var urlSegments = currentUrl.split("?");
+						window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+					}
+					else {
+						window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+					}
+			}
+		</script>
+		
+			
+		
+	</body>
+</html>
+<!-- Generated at 11/20/2020 4:03:09 PM -->
+<!-- Page OK -->
