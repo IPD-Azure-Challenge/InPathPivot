@@ -41,7 +41,8 @@ We offer a variety of services that are focused on Technical and Vocational trai
 -   Enterprise Education Instructors
 -   Corporate and Government Partners for Virtual Workforce Development
 
-
+### How was it built and how can you recreate?
+We utilized Microsoft's Azure PowerApps tool to build this app. Specifically, Power Apps Custom Portal, Common Data Source (aka DataServe), and Education accelerator were used. To recreate, you'll need to use the Power Apps tool data models, unzip these [files:] (https://github.com/IPD-Azure-Challenge/InPathPivot/blob/main/ExportedFiles_4ad9e784-1e6f-475a-bd4c-2c288b0d4572.zip), and upload them into your app. 
 
 # Licensing
 
